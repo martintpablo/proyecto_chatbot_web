@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { ChatComponent } from './components/chat/chat.component';
+import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
+import { AlumnosComponent } from './components/alumnos/alumnos.component';
+import { RedirectComponent } from './components/redirect/redirect.component'; 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent }
+  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
+  { path: 'inicio', component: HomeComponent },
+  { path: 'chat', component: ChatComponent },
+  { path: 'estadisticas', component: EstadisticasComponent },
+  { path: 'alumnos', component: AlumnosComponent },
+  { path: '**', component: RedirectComponent }
 ];
 
 @NgModule({
