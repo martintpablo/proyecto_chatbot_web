@@ -2,9 +2,6 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    /* mio */
-    "types": ["jasmine"],
-    /* mio */
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
