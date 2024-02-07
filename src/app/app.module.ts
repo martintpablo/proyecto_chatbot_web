@@ -10,6 +10,7 @@ import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { BotComponent } from './components/bot/bot.component';
 import { RedirectComponent } from './components/redirect/redirect.component';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
+import { PyScriptDirective } from './directives/py-script.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginComponentComponent } from './components/login-component/login-comp
     AlumnosComponent,
     BotComponent,
     RedirectComponent,
-    LoginComponentComponent
+    LoginComponentComponent,
+    PyScriptDirective
   ],
   imports: [
     BrowserModule,
