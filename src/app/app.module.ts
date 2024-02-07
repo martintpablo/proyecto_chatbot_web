@@ -13,6 +13,7 @@ import { LoginComponentComponent } from './components/login-component/login-comp
 import { PyScriptDirective } from './directives/py-script.directive';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RoleRegisterComponent } from './components/role-register/role-register.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RedirectComponent,
     LoginComponentComponent,
     PyScriptDirective,
-    RegisterComponent
+    RegisterComponent,
+    RoleRegisterComponent
   ],
   imports: [
     BrowserModule,

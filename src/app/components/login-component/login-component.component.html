@@ -2,11 +2,11 @@
     <div class="w-75 h-50 d-flex flex-column justify-content-around align-items-center">
         <input id="email" class="w-75 rounded shadow form-control border border-black" type="email" placeholder="Email"/>
         <input id="pwd" class="w-75 rounded shadow form-control border border-black" type="password" placeholder="Contraseña"/>
-        <button id="btn-login" type="button" class="btn border border-black shadow rounded-4">Iniciar Sesión</button>
+        <button (click)="login()" id="btn-login" type="button" class="btn border border-black shadow rounded-4">Iniciar Sesión</button>
     </div>
-    <div class="h-25 d-flex align-items-center">o</div>
+    <div class="h-25 d-flex align-items-center">——————— o ———————</div>
     <div class="h-25 d-flex align-items-center">
-        <button id="btn-register" type="button" class="btn btn-secondary border border-black shadow" data-bs-toggle="modal" data-bs-target="#registroModal">Registrarse</button>
+        <button id="btn-register" type="button" class="btn btn-secondary border border-black shadow" data-bs-toggle="modal" data-bs-target="#chooseRegistroModal">Registrarse</button>
     </div>
-    <app-register></app-register>
+    <app-role-register></app-role-register>
 </div>

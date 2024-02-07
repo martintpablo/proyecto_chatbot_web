@@ -1,5 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy, SimpleChanges, Input, ViewChild } from '@angular/core';
-import { NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { LoginComponentComponent } from '../login-component/login-component.component';
 
 @Component({
   selector: 'app-register',
@@ -16,4 +16,13 @@ export class RegisterComponent implements OnInit {
     this.mostrarFormulario = !this.mostrarFormulario;
   }
 
+  //@ViewChild(LoginComponentComponent) modal!: LoginComponentComponent;
+
+  //reg:boolean = false
+
+  //registerChange() {
+    //if (this.modal.chosen == true) {
+      //this.reg = true
+    //}
+  //}
 }
