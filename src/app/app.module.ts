@@ -9,6 +9,7 @@ import { EstadisticasComponent } from './components/estadisticas/estadisticas.co
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { BotComponent } from './components/bot/bot.component';
 import { RedirectComponent } from './components/redirect/redirect.component';
+import { LoginComponentComponent } from './components/login-component/login-component.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { RedirectComponent } from './components/redirect/redirect.component';
     EstadisticasComponent,
     AlumnosComponent,
     BotComponent,
-    RedirectComponent
+    RedirectComponent,
+    LoginComponentComponent
   ],
   imports: [
     BrowserModule,
