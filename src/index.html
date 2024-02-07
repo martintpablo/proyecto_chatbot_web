@@ -2,12 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>ProyectoChatbotWeb</title>
+  <title>ProyectoChatbot</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
 </head>
 <body>
   <app-root></app-root>
+  <py-env>
+    - micropip
+    - asyncio
+  </py-env>
+  <py-script>
+    async def install_packages():
+      await micropip.install('nltk', keep_going=True)
+      await micropip.install('translate', keep_going=True)
+
+    asyncio.create_task(install_packages())
+  </py-script>
 </body>
 </html>

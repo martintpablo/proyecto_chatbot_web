@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './bot.component.html',
   styleUrls: ['./bot.component.css']
 })
+
 export class BotComponent {
 
 }
