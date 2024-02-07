@@ -1,9 +1,66 @@
-#login-container {
-    background-color: #E3E3E3;
-    color: black;
-}
-
-#btn-login {
+.formulario {
+    width: 400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .formulario h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #444;
+  }
+  
+  .contenedor {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .input-contenedor {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: none;
+    border-bottom: 2px solid #cccccc;
+    font-size: 16px;
+    color: #444;
+    outline: none;
+    background-color: transparent;
+  }
+  
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-bottom: 2px solid  #5E6FAB;
+  }
+  
+  .button1 {
     background-color: #5E6FAB;
-    color: white;
-}
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  .button1:hover {
+    background-color:  #75258c;
+  }
+  
+  .link {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .link:hover {
+    text-decoration: underline;
+  }
