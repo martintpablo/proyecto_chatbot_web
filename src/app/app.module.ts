@@ -11,6 +11,8 @@ import { BotComponent } from './components/bot/bot.component';
 import { RedirectComponent } from './components/redirect/redirect.component';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
 import { PyScriptDirective } from './directives/py-script.directive';
+import { RegisterComponent } from './components/register/register.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,14 @@ import { PyScriptDirective } from './directives/py-script.directive';
     BotComponent,
     RedirectComponent,
     LoginComponentComponent,
-    PyScriptDirective
+    PyScriptDirective,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
