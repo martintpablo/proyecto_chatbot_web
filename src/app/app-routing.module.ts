@@ -5,6 +5,7 @@ import { ChatComponent } from './components/chat/chat.component';
 import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { RedirectComponent } from './components/redirect/redirect.component'; 
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'chat', component: ChatComponent },
   { path: 'estadisticas', component: EstadisticasComponent },
   { path: 'alumnos', component: AlumnosComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '**', component: RedirectComponent }
 ];
 

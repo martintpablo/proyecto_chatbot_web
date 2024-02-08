@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { BotComponent } from '../bot/bot.component';
 
 @Component({
   selector: 'app-chat',

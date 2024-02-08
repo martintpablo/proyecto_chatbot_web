@@ -2,29 +2,24 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
+            <h5>¿Cuál será tu rol dentro de la web?</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">   
             <div class="col">
-                <div class="row w-100 ms-1 m mb-5 px-4">
-                    <button id="btn-student" class="btn border border-black shadow rounded-2" data-bs-toggle="modal" data-bs-target="#registroModal">
+                <div class="row w-100 ms-1 m mb-5 px-4" data-bs-dismiss="modal">
+                    <button id="btn-student" (click)="register()" class="btn border border-black shadow rounded-2">
                         <h3>Estudiante</h3>
-                        <p class="text-start">Los estudiantes interactuarán con el chatbot. Forman parte de un curso con un profesor al frente</p>
+                        <p class="text-start">Los estudiantes interactuarán con el chatbot. Forman parte de un curso con un profesor al frente.</p>
                     </button>
                 </div>
-                <app-register></app-register>
-                <div class="row w-100 m-1 px-4">
-                    <button id="btn-teacher" class="btn border border-black shadow rounded-2" data-bs-toggle="modal" data-bs-target="#registroModal">
+                <div class="row w-100 m-1 px-4" data-bs-dismiss="modal" >
+                    <button id="btn-teacher" (click)="register()" class="btn border border-black shadow rounded-2">
                         <h3>Profesor</h3>
-                        <p class="text-start">Los profesores están al frente de una clase y tienen un seguimiento de las emociones y el ánimo de los alumnos</p>
+                        <p class="text-start">Los profesores están al frente de una clase y tienen un seguimiento de las emociones y el ánimo de los alumnos.</p>
                     </button>
                 </div>
-                <app-register></app-register>
             </div>
         </div>
     </div>
 </div>
-
-<!-- Existe un problema y es que después de este modal no puedo abrir otro modal por encima con los campos de registro -->
-
-

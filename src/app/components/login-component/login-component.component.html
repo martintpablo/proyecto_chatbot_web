@@ -1,4 +1,4 @@
-<form class="formulario" id="login-container">
+<form class="formulario m-0" id="login-container">
     <h1>Iniciar sesión</h1>
     <div class="contenedor">
         <div class="input-contenedor">
@@ -7,10 +7,10 @@
         <div class="input-contenedor">
             <input type="password" placeholder="Contraseña" id = "pwd" name = "password" required minlength="6" />
         </div>
-        <input type="submit" value="Acceder" id="btn-login" class="button1" />
+        <input type="submit" (click)="login()" value="Acceder" id="btn-login" class="button1" />
         <p style="text-align: center">
             ¿No tienes una cuenta?
-            <button id="button" style="border-radius:5px" type="button" data-bs-toggle="modal" data-bs-target="#registroModal">Registrarse</button>
+            <button id="button" style="border-radius:5px" type="button" data-bs-toggle="modal" data-bs-target="#chooseRegistroModal">Registrarse</button>
         </p>
     </div>
     <app-role-register></app-role-register>
