@@ -1,0 +1,9 @@
+#body-register {
+    background: linear-gradient(0deg, rgba(128,94,171,1) 0%, rgba(53,9,87,1) 100%);
+    font-family: 'Titan One', sans-serif;
+}
+
+@font-face {
+    font-family: 'Titan One';
+    src: url("../../../assets/fonts/TitanOne-Regular.ttf");
+}

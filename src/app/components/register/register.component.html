@@ -1,15 +1,48 @@
-<form>
-  <div class="mb-3">
-    <label for="nombre" class="form-label">Nombre</label>
-    <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+<div id="body-register" class="vw-100 vh-100 d-flex flex-column justify-content-start align-items-center pt-2">
+  <div id="titulo" class="w-25 d-flex justify-content-around align-items-center text-white mb-5">
+    <p class="text-center fs-1">Student Thoughts<br/>Analyzer Chat</p>
   </div>
-  <div class="mb-3">
-    <label for="email" class="form-label">Correo Electrónico</label>
-    <input type="email" class="form-control" id="email_reg" placeholder="Ingrese su correo electrónico">
+  <div id="form-container" class="w-50 h-50 border bg-light rounded-3 p-3 shadow-lg">
+    <form id="form-register" class="w-100 h-100">
+      <div class="d-flex">
+        <div class="w-50">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su nombre">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Correo Electrónico</label>
+            <input type="email" class="form-control" id="email_reg" placeholder="Ingrese su correo electrónico">
+          </div>
+          <div class="mb-3">
+            <label for="genero" class="form-label">Género</label>
+            <input type="text" class="form-control" id="genero" placeholder="***Poner select***">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
+          </div>
+        </div>
+        <div class="w-50">
+          <div class="mb-3">
+            <label for="apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" placeholder="Ingrese sus apellidos">
+          </div>
+          <div class="mb-3">
+            <label for="fecha_nac" class="form-label">Fecha de nacimiento</label>
+            <input type="calendar" class="form-control" id="fecha_nac" placeholder="***Poner calendario***">
+          </div>
+          <div class="mb-3">
+            <label for="curso" class="form-label">Curso</label>
+            <input type="text" class="form-control" id="genero" placeholder="Ingrese su curso">
+          </div>
+          <div class="mb-3">
+            <label for="password-2" class="form-label">Repetir contraseña</label>
+            <input type="password" class="form-control" id="password-2" placeholder="Repita su contraseña">
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-4">Registrarse</button>
+    </form>
   </div>
-  <div class="mb-3">
-    <label for="password" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" id="password" placeholder="Ingrese su contraseña">
-  </div>
-  <button type="submit" class="btn btn-primary">Registrarse</button>
-</form>
+</div>
