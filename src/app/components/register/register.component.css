@@ -7,3 +7,43 @@
     font-family: 'Titan One';
     src: url("../../../assets/fonts/TitanOne-Regular.ttf");
 }
+
+.input-contenedor {
+    position: relative;
+    margin-bottom: 20px;
+    width: 75%;
+}
+
+#form-container {
+    height: 57%;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px 15px 10px 40px;
+    border: none;
+    border-bottom: 2px solid #cccccc;
+    font-size: 16px;
+    color: #444;
+    outline: none;
+    background-color: transparent;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="text"]:focus {
+    border-bottom: 2px solid  #5E6FAB;
+}
+
+select {
+    width: 100%;
+    color: #444;
+    border-color: #b4b4b4;
+}
+
+button[type="submit"] {
+    background-color: #5E6FAB;
+    color: white;
+}
