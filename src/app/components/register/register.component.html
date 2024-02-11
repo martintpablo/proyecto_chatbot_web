@@ -1,6 +1,6 @@
 <div id="body-register" class="vw-100 vh-100 d-flex flex-column justify-content-start align-items-center pt-2">
   <div id="titulo" class="w-25 d-flex justify-content-around align-items-center text-white mb-5">
-    <p class="text-center fs-1">Student Thoughts<br/>Analyzer Chat</p>
+    <p>Student Thoughts<br/>Analyzer Chat</p>
   </div>
   <div id="form-container" class="w-50 border bg-light rounded-3 p-3 shadow-lg">
     <h1 class="text-center border">Crear cuenta</h1>
@@ -10,24 +10,23 @@
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <div class="input-contenedor">
-              <input type="text" class="" id="nombre" placeholder="Ingrese su nombre" required>
+              <input type="text" id="nombre" placeholder="Ingrese su nombre" required>
             </div>
           </div>
           <div class="mb-3">
             <label for="email" class="form-label">Correo Electrónico</label>
             <div class="input-contenedor">
-              <input type="email" class="" id="email_reg" placeholder="Ingrese su correo electrónico" required>
+              <input type="email" class="" id="email_reg" placeholder="Ingrese su email" required>
             </div>
           </div>
           <div class="mb-3">
             <label for="genero" class="form-label">Género</label><br/>
             <div class="input-contenedor">
               <select name="genero" id="genero" class="rounded px-2" required>
-                <option selected disabled>Selecciona uno</option>
+                <option selected disabled>Seleccione</option>
                 <option value="hombre">Hombre</option>
                 <option value="mujer">Mujer</option>
-                <option value="no_binario">No binario</option>
-                <option value="no_contestar">Prefiero no contestar</option>
+                <option value="otro">Otro</option>
               </select>
             </div>
           </div>
@@ -65,7 +64,7 @@
           </div>
         </div>
       </div>
-      <button type="submit" class="btn mt-3 mx-3">Registrarse</button>
+      <button type="submit">Registrarse</button>
     </form>
   </div>
 </div>

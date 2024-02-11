@@ -1,5 +1,5 @@
 #body-register {
-    background: linear-gradient(0deg, rgba(128,94,171,1) 0%, rgba(53,9,87,1) 100%);
+    background: linear-gradient(0deg, rgba(128, 94, 171, 1) 0%, rgba(53, 9, 87, 1) 100%);
     font-family: 'Titan One', sans-serif;
 }
 
@@ -14,27 +14,25 @@
     width: 75%;
 }
 
-#form-container {
-    height: 57%;
-}
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%;
-    padding: 10px 15px 10px 40px;
+    padding: 10px 15px 10px 20px;
     border: none;
     border-bottom: 2px solid #cccccc;
     font-size: 16px;
     color: #444;
     outline: none;
     background-color: transparent;
+    
 }
 
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="text"]:focus {
-    border-bottom: 2px solid  #5E6FAB;
+    border-bottom: 2px solid rgba(128, 94, 171, 1);
 }
 
 select {
@@ -45,5 +43,51 @@ select {
 
 button[type="submit"] {
     background-color: #5E6FAB;
-    color: white;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
+
+input::placeholder {
+    color: #c0c0c0;
+    font-family: 'source sans pro';
+}
+
+
+#form-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+input[type="text"]:focus::placeholder,
+input[type="email"]:focus::placeholder,
+input[type="password"]:focus::placeholder {
+    color: transparent;
+    transition: color 0.5s ease;
+    
+}
+
+h1 {
+    margin-bottom: 25px;
+}
+
+p {
+    margin-top: 10%;
+    text-align: center;
+    font-size: 230%;
+}
+
+  button:hover {
+    background-color: #75258c;
+  }
+
+  option {
+    font-family: 'Calibri';
+  }
