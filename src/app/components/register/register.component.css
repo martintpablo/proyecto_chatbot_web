@@ -1,93 +1,93 @@
 #body-register {
-    background: linear-gradient(0deg, rgba(128, 94, 171, 1) 0%, rgba(53, 9, 87, 1) 100%);
-    font-family: 'Titan One', sans-serif;
+  background: linear-gradient(0deg, rgba(128, 94, 171, 1) 0%, rgba(53, 9, 87, 1) 100%);
+  font-family: 'Titan One', sans-serif;
 }
 
 @font-face {
-    font-family: 'Titan One';
-    src: url("../../../assets/fonts/TitanOne-Regular.ttf");
+  font-family: 'Titan One';
+  src: url("../../../assets/fonts/TitanOne-Regular.ttf");
 }
 
 .input-contenedor {
-    position: relative;
-    margin-bottom: 20px;
-    width: 75%;
+  position: relative;
+  margin-bottom: 20px;
+  width: 75%;
 }
-
 
 input[type="text"],
 input[type="email"],
 input[type="password"] {
-    width: 100%;
-    padding: 10px 15px 10px 20px;
-    border: none;
-    border-bottom: 2px solid #cccccc;
-    font-size: 16px;
-    color: #444;
-    outline: none;
-    background-color: transparent;
-    
+  width: 100%;
+  padding: 10px 15px 10px 20px;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  font-size: 16px;
+  color: #444;
+  outline: none;
+  background-color: transparent;
 }
 
 input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="text"]:focus {
-    border-bottom: 2px solid rgba(128, 94, 171, 1);
+  border-bottom: 2px solid rgba(128, 94, 171, 1);
 }
 
 select {
-    width: 100%;
-    color: #444;
-    border-color: #b4b4b4;
+  width: 100%;
+  color: #444;
+  border-color: #b4b4b4;
 }
 
 button[type="submit"] {
-    background-color: #5E6FAB;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    margin-bottom: 20px;
-    margin-left: 20px;
+  background-color: #5E6FAB;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-left: 20px;
 }
 
 input::placeholder {
-    color: #c0c0c0;
-    font-family: 'source sans pro';
+  color: #c0c0c0;
+  font-family: 'source sans pro';
 }
 
-
 #form-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-  }
+  margin-top: 3%;
+  margin-left: 50px;
+}
 
 input[type="text"]:focus::placeholder,
 input[type="email"]:focus::placeholder,
 input[type="password"]:focus::placeholder {
-    color: transparent;
-    transition: color 0.5s ease;
-    
+  color: transparent;
+  transition: color 0.5s ease;
 }
 
 h1 {
-    margin-bottom: 25px;
+  margin-bottom: 25px;
+  text-align: center;
 }
+
+input[type=date],
+select[id="genero"] {
+  font-family: 'source sans pro';
+}
+
 
 p {
-    margin-top: 10%;
-    text-align: center;
-    font-size: 230%;
+  margin-top: 10%;
+  text-align: center;
+  font-size: 230%;
 }
 
-  button:hover {
-    background-color: #75258c;
-  }
+button:hover {
+  background-color: #75258c;
+}
 
-  option {
-    font-family: 'Calibri';
-  }
+option {
+  font-family: 'source sans pro';
+}
