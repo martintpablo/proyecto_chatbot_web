@@ -74,3 +74,27 @@
     width: 90%;
     padding-top: 20%;
 }
+
+#textinput{
+    font-size: 25px;
+    font-family: "Titan One";
+    margin-top: auto;
+    margin-bottom: 2%;
+    height: 11%;
+    width: 70%;
+    border-radius: 31px;
+    padding-left: 4%;
+    background: rgb(235, 230, 234);
+}
+
+#textinput::placeholder {
+    font-family: "Titan One";
+    font-size: 30px;
+    opacity: 1;
+    padding-bottom: 5%;
+}
+
+@font-face {    
+    font-family: 'Titan One';     
+    src: url("../../../assets/fonts/TitanOne-Regular.ttf"); 
+}
