@@ -10,3 +10,6 @@ p {
     font-family:'Times New Roman', Times, serif;
 }
 
+#btn-student:hover, #btn-teacher:hover {
+    background-color: rgb(143, 121, 214);
+}
