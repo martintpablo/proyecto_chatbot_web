@@ -17,13 +17,13 @@ import { RoleRegisterComponent } from './components/role-register/role-register.
 import { MessageComponent } from './components/message/message.component';
 import { EstadisticasAlumnoComponent } from './components/estadisticas-alumno/estadisticas-alumno.component';
 import { PorffConfirmComponent } from './components/porff-confirm/porff-confirm.component';
+import { EstadisticasProfesorComponent } from './components/estadisticas-profesor/estadisticas-profesor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ChatComponent,
-    EstadisticasComponent,
     AlumnosComponent,
     BotComponent,
     RedirectComponent,
@@ -33,7 +33,8 @@ import { PorffConfirmComponent } from './components/porff-confirm/porff-confirm.
     RoleRegisterComponent,
     MessageComponent,
     EstadisticasAlumnoComponent,
-    PorffConfirmComponent
+    PorffConfirmComponent,
+    EstadisticasProfesorComponent
   ],
   imports: [
     BrowserModule,
