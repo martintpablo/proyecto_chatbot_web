@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ChatComponent } from './components/chat/chat.component';
-import { EstadisticasComponent } from './components/estadisticas/estadisticas.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
 import { BotComponent } from './components/bot/bot.component';
 import { RedirectComponent } from './components/redirect/redirect.component';
@@ -18,6 +17,7 @@ import { MessageComponent } from './components/message/message.component';
 import { EstadisticasAlumnoComponent } from './components/estadisticas-alumno/estadisticas-alumno.component';
 import { PorffConfirmComponent } from './components/porff-confirm/porff-confirm.component';
 import { EstadisticasProfesorComponent } from './components/estadisticas-profesor/estadisticas-profesor.component';
+import { ListaAlumnosComponent } from './components/lista-alumnos/lista-alumnos.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import { EstadisticasProfesorComponent } from './components/estadisticas-profeso
     MessageComponent,
     EstadisticasAlumnoComponent,
     PorffConfirmComponent,
-    EstadisticasProfesorComponent
+    EstadisticasProfesorComponent,
+    ListaAlumnosComponent
   ],
   imports: [
     BrowserModule,
