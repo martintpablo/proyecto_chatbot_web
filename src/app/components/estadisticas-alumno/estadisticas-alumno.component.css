@@ -44,6 +44,7 @@
     padding-bottom: 20%;
 }
 
+
 #estadisticas-div {
     border-bottom: solid;
     border-color: white;
@@ -54,10 +55,12 @@
     margin-top: 20%;
 }
 
+
 #estadisticasimg {
     width: 90%;
     padding-bottom: 20%;
 }
+
 
 #logo-div{
     border-top: solid;
@@ -73,4 +76,12 @@
 #logoimg{
     width: 90%;
     padding-top: 20%;
+}
+
+.chart {
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+    height: 400px;
 }

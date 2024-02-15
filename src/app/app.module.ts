@@ -19,6 +19,7 @@ import { PorffConfirmComponent } from './components/porff-confirm/porff-confirm.
 import { EstadisticasProfesorComponent } from './components/estadisticas-profesor/estadisticas-profesor.component';
 import { ListaAlumnosComponent } from './components/lista-alumnos/lista-alumnos.component';
 import { StudentOptionComponent } from './components/student-option/student-option.component';
+import { IonicModule } from '@ionic/angular';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { StudentOptionComponent } from './components/student-option/student-opti
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule, 
+    IonicModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

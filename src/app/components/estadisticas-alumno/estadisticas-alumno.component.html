@@ -2,17 +2,41 @@
     <div class="w-100 h-100">
         <div id="barra-lateral" class="d-flex align-items-center">
             <div id="user-div" class="d-flex justify-content-center align-items-center">
-                <img id="userimg" src="../../../assets/img/UserImg.png" alt="UserImg">
+                <img (click)="profile()" id="userimg" src="../../../assets/img/UserImg.png" alt="UserImg">
             </div>
             <div id="estadisticas-div" class="d-flex justify-content-center align-items-center">
-                <img id="estadisticasimg" src="../../../assets/img/ChatImg.png" alt="UserImg">
+                <img (click)="toChat()" id="estadisticasimg" src="../../../assets/img/ChatImg.png" alt="UserImg">
             </div>
             <div id="logo-div" class="d-flex justify-content-center align-items-center">
                 <img id="logoimg" src="../../../assets/img/LogoBD.png" alt="LogImg">
             </div>
         </div>
         <div id="contenido-chat-div" class="d-flex justify-content-center align-items-center">
-            <div id="chat-div"  class="d-flex justify-content-center align-items-center">
+            <div id="chat-div">
+                <div id="header" class="h-25 w-100">
+                    <div class="row h-50 w-100 align-items-end px-5">
+                        <h2 class="col-4 me-auto">**Nombre del Alumno**</h2>
+                        <div class="col-2 me-auto">
+                            <h4>Clase: clase</h4>
+                        </div>
+                        <div class="col-3 ms-auto">
+                            <h5>Fecha:  {{ rangeValues.lower }} - {{ rangeValues.upper }}</h5>
+                            <ion-range aria-label="Dual Knobs Range" [dualKnobs]="true" [value]="rangeValues" pin="true" (ionChange)="onRangeChange($event)"></ion-range>
+                        </div>
+                    </div>
+                    <hr style="width: 95%; margin: auto;">
+                    <div></div>
+                    <div class="align-items-center">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <div class="chart"><canvas id="messagePerDateChart"></canvas></div>
+                            </div>
+                            <div class="col align-items-center">
+                                <div class="chart"><canvas id="feelingsChart"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>    

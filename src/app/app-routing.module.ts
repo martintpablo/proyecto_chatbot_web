@@ -7,7 +7,6 @@ import { RedirectComponent } from './components/redirect/redirect.component';
 import { EstadisticasAlumnoComponent } from './components/estadisticas-alumno/estadisticas-alumno.component';
 import { RegisterComponent } from './components/register/register.component';
 import { EstadisticasProfesorComponent } from './components/estadisticas-profesor/estadisticas-profesor.component';
-import { ListaAlumnosComponent } from './components/lista-alumnos/lista-alumnos.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
