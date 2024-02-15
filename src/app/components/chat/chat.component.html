@@ -12,9 +12,23 @@
             </div>
         </div>
         <div id="contenido-chat-div" class="d-flex justify-content-center align-items-center">
-            <div id="chat-div"  class="d-flex justify-content-center align-items-center">
-                <input id="textinput" placeholder="Escribe a STAC...">
+            <div id="chat-div">
+                <div id="chat-scroll">
+                    <div class="fecha">
+                        <hr class="barras">
+                        <p class="fecha-chat">{{fechaDeHoy | date:'dd/MM/yyyy'}}</p>
+                        <hr class="barras">
+                    </div>
+                </div>
+                <div id="entrada">
+                    <input id="textinput" (keyup.enter)="enviarDatos()" placeholder="Escribe a STAC...">
+                    <div id="marcoEnvio">
+                        <hr class="vertical">
+                        <button id="sendButton" (click)="enviarDatos()"><img width="95%" src="../../../assets/img/Send.png"
+                                alt="Enviar"></button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
