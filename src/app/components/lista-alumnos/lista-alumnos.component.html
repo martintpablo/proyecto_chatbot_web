@@ -1,1 +1,3 @@
-<p>lista-alumnos works!</p>
+<div *ngFor="let student of getStudent()| async ">
+    <app-student-option [student]="student"></app-student-option>
+</div>

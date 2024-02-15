@@ -18,6 +18,7 @@ import { EstadisticasAlumnoComponent } from './components/estadisticas-alumno/es
 import { PorffConfirmComponent } from './components/porff-confirm/porff-confirm.component';
 import { EstadisticasProfesorComponent } from './components/estadisticas-profesor/estadisticas-profesor.component';
 import { ListaAlumnosComponent } from './components/lista-alumnos/lista-alumnos.component';
+import { StudentOptionComponent } from './components/student-option/student-option.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ListaAlumnosComponent } from './components/lista-alumnos/lista-alumnos.
     EstadisticasAlumnoComponent,
     PorffConfirmComponent,
     EstadisticasProfesorComponent,
-    ListaAlumnosComponent
+    ListaAlumnosComponent,
+    StudentOptionComponent
   ],
   imports: [
     BrowserModule,
