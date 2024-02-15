@@ -17,7 +17,6 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'estadisticas-alumno', component: EstadisticasAlumnoComponent },
   { path: 'estadisticas-profesor', component: EstadisticasProfesorComponent },
-  { path: 'clase', component: ListaAlumnosComponent},
   { path: '**', component: RedirectComponent }
 ];
 
