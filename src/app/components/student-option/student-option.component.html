@@ -1,14 +1,12 @@
-<div id="student-row" class="d-flex">
+<div class="d-flex py-1 w-100 justify-content-between">
+
     <div class="w-75 px-4">
         <p class="">{{student.name}} {{student.surname}}</p>
     </div>
-    <div class="w-25 d-flex justify-content-end">
-        <button>Estadisticas</button>
-        <button>Expulsar</button>
+    <div class="w-25 d-flex justify-content-end align-items-center">
+        <div class="barrita"></div>
+        <img (click)="statistics()" src="../../../assets/img/stats_icon.jpg" class="student-statistics"/>
+        <img src="../../../assets/img/close-icon.png" class="student-kick"/> <!-- Ponerle click()="" -->
     </div>
-    <!-- 
-    <div class="w-25 d-flex justify-content-end">
-        
-    </div>
-     -->
+    
 </div>

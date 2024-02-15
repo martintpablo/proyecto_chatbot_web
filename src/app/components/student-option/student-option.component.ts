@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { User } from 'src/app/models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student-option',
@@ -9,7 +10,11 @@ import { User } from 'src/app/models/user.model';
 export class StudentOptionComponent {
   @Input() student!: User;
 
-  constructor(
-    
-  ) { }
+  constructor(private router: Router) { 
+
+  }
+
+  statistics() {
+    this.router.navigate(['/estadisticas-alumno']);
+  }
 }
