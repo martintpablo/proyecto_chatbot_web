@@ -1,3 +1,9 @@
+
+#entrada:hover{
+    cursor: text;
+    pointer-events: none;
+}
+
 #barra-lateral {
     background: rgb(33, 34, 49);
     border-style: solid;
@@ -98,6 +104,55 @@
 
 }
 
+.mensaje_usuario {
+    text-align: right;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: baseline;
+    column-gap: 1%;
+}
+
+.hora {
+    text-align: right;
+    font-size: smaller;
+    padding-top: 1rem;
+}
+.info{
+    width: 50%;
+    text-align: end;
+    height: auto;
+    overflow-wrap: break-word;
+
+}
+
+.usuario{
+    font-family: "Titan One";
+}
+.mensaje_bot {
+    text-align: left;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: start;
+    align-items: baseline;
+    column-gap: 1%;
+    text-align: left;
+}
+
+.hora_bot {
+    text-align: left;
+    font-size: smaller;
+    padding-top: 1rem;
+}
+.info_bot{
+    width: 50%;
+    text-align: start;
+    height: auto;
+    overflow-wrap: break-word;
+    
+}
+
+
 .barras {
     border: 0.15rem solid black !important;
     opacity: 1;
@@ -119,6 +174,7 @@
     align-content: center;
     justify-content: space-between;
 }
+
 
 #textinput {
     display: flex;
@@ -167,6 +223,7 @@
 
 #sendButton {
     padding-left: 0;
+    width: 100%;
     background-color: transparent;
     border: none;
 }

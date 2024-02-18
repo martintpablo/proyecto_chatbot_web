@@ -12,9 +12,60 @@
             </div>
         </div>
         <div id="contenido-chat-div" class="d-flex justify-content-center align-items-center">
-            <div id="chat-div"  class="d-flex justify-content-center align-items-center">
-                <input id="textinput" placeholder="Escribe a STAC...">
+            <div id="chat-div">
+                <div id="chat-scroll">
+                    <div id="mensajes">
+                        <div class="fecha">
+                            <hr class="barras">
+                            <p class="fecha-chat">{{ fechaDeAyer | date:'dd/MM/yyyy' }}</p>
+                            <hr class="barras">
+                        </div>
+                        <div *ngFor="let mensaje of mensajes; let i = index" class="mensaje"
+                            [ngClass]="i % 2 == 0 ? 'mensaje_bot' : 'mensaje_usuario'">
+                            <!-- <div class="info">
+                                <h5 class="usuario">{{ mensaje.usuario }}</h5>
+                                <div class="contenido">{{ mensaje.texto }}</div>
+                                <div class="hora">{{ mensaje.hora }}</div>
+                            </div> -->
+                            <ng-container *ngIf="i % 2 != 0; else par">
+                                <div class="info">
+                                    <h5 class="usuario">{{ mensaje.usuario }}</h5>
+                                    <div class="contenido">{{ mensaje.texto }}</div>
+                                    <!-- <div class="hora">{{ mensaje.hora }}</div> -->
+                                </div>
+                                <div class="user_img">
+                                    <img class="imagen" src="../../../assets/img/Account circle.png" alt="icono_STAC">
+                                </div>
+                            </ng-container>
+                            <ng-template #par>
+                                <div *ngIf="aparicionBarra()" class="fecha">
+                                    <div *ngFor="let elemento of elementosHTML" [innerHTML]="elemento"></div>
+                                </div>
+                                <div class="info_bot">
+                                    <h5 class="usuario">{{ mensaje.usuario }}</h5>
+                                    <div class="contenido_bot">{{ mensaje.texto }}</div>
+                                    <!-- <div class="hora_bot">{{ mensaje.hora }}</div> -->
+                                </div>
+                                <div class="user_img">
+                                    <img class="imagen" src="../../../assets/img/LogoCHAT.png" alt="icono_usuario">
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+                <div id="entrada">
+                    <input id="textinput" #inputText
+                        (keyup.enter)="inputText.value !== '' && enviarDatos(inputText.value)"
+                        placeholder="Escribe a STAC...">
+                    <div id="marcoEnvio">
+                        <hr class="vertical">
+                        <button id="sendButton" (click)="inputText.value !== '' && enviarDatos(inputText.value)">
+                            <img width="40%"
+                                src="../../../assets/img/Send.png" alt="Enviar">
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>    
+    </div>
 </div>
