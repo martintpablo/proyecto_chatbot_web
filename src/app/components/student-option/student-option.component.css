@@ -1,4 +1,4 @@
-.student-statistics, .student-kick {
+.student-statistics{
     width: 50px;
     /* width: 27%; */
     cursor: pointer;
@@ -9,12 +9,15 @@
 
 .student-kick {
     /* width: 27%; */
-    margin-left: 2%;
+    width: 50px;
+    margin-left: 5%;
+    margin-right: 5%;
     border: none;
 }
 
 .barrita {
     width: 1px;
     height: 75%;
-    border-left: 1px solid black;
+    border-left: 2px solid black !important;
 }
+

@@ -101,6 +101,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 2%;
 
 }
 
@@ -111,6 +112,7 @@
     justify-content: end;
     align-items: baseline;
     column-gap: 1%;
+    font-size: 22px;
 }
 
 .hora {
@@ -137,6 +139,7 @@
     align-items: baseline;
     column-gap: 1%;
     text-align: left;
+    font-size: 22px;
 }
 
 .hora_bot {
@@ -192,6 +195,10 @@
     padding-bottom: 5%;
     border: none;
 
+}
+
+#textinput:focus::placeholder {
+    color: transparent;
 }
 
 #textinput:hover,
