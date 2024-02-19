@@ -2,7 +2,7 @@ from pyscript import document
 
 
 
-# import nltk
+import nltk
 from nltk.chat.util import Chat, reflections
 import random
 from preguntas import preguntas_materias, preguntas_companeros, preguntas_profesores, preguntas_centro, estudios_generales, preguntas_personales, preguntas_examenes
@@ -41,10 +41,10 @@ def hacer_preguntas(categoria, pregunta_clave, preguntas):
     # Seleccionar aleatoriamente dos preguntas
     random.shuffle(preguntas_filtradas)
     for i in range(2):
-      print(f"{i + 2}. {preguntas_filtradas[i]}")
-      respuesta_usuario = input("Tu respuesta: ")
-      respuestas_categoria.append(respuesta_usuario)
-      print(f"{respuesta_usuario}")
+        print(f"{i + 2}. {preguntas_filtradas[i]}")
+        respuesta_usuario = input("Tu respuesta: ")
+        respuestas_categoria.append(respuesta_usuario)
+        print(f"{respuesta_usuario}")
 
     return tuple(respuestas_categoria)
 

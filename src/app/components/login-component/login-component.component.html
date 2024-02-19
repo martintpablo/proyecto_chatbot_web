@@ -7,7 +7,7 @@
         <div class="input-contenedor">
             <input type="password" placeholder="Contraseña" id = "pwd" name = "password" required minlength="6" />
         </div>
-        <input type="submit" (click)="login()" value="Acceder" id="btn-login" class="button1" />
+        <input type="submit" (click)="login(email.value)" value="Acceder" id="btn-login" class="button1" />
         <p>
             ¿No tienes una cuenta?
             <button id="button" type="button" data-bs-toggle="modal" data-bs-target="#chooseRegistroModal">Registrarse</button>
