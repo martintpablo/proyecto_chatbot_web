@@ -8,6 +8,7 @@ import { EstadisticasAlumnoComponent } from './components/estadisticas-alumno/es
 import { RegisterComponent } from './components/register/register.component';
 import { EstadisticasProfesorComponent } from './components/estadisticas-profesor/estadisticas-profesor.component';
 import { BotComponent } from './components/bot/bot.component';
+import { PorffConfirmComponent } from './components/porff-confirm/porff-confirm.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'estadisticas-alumno', component: EstadisticasAlumnoComponent },
   { path: 'estadisticas-profesor', component: EstadisticasProfesorComponent },
   { path: 'bot', component: BotComponent },
+  { path: 'prueba', component: PorffConfirmComponent },
   { path: '**', component: RedirectComponent }
 ];
 

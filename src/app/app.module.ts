@@ -20,6 +20,7 @@ import { EstadisticasProfesorComponent } from './components/estadisticas-profeso
 import { ListaAlumnosComponent } from './components/lista-alumnos/lista-alumnos.component';
 import { StudentOptionComponent } from './components/student-option/student-option.component';
 import { IonicModule } from '@ionic/angular';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { IonicModule } from '@ionic/angular';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
+    HttpClientModule,
     IonicModule.forRoot()
   ],
   providers: [],
