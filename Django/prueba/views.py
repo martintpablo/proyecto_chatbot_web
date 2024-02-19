@@ -12,3 +12,12 @@ def chatbot_view(request):
         return JsonResponse(response_data)
     else:
         return HttpResponse(status=405) 
+    
+
+# Instalar antes de ejecutar el servidor
+#    
+# pip install django
+# pip install djangorestframework
+# pip install django-cors-headers
+    
+# Arrancar el Servidor: python manage.py runserver
