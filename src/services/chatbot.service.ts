@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/app/environment/Global'; 
 
@@ -7,7 +7,7 @@ import { environment } from 'src/app/environment/Global';
   providedIn: 'root'
 })
 export class Chatbot {
-  apiUrl = 'URL_DE_TU_API'; 
+  apiUrl = 'https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/'; 
 
   constructor(private http: HttpClient) {}
 
@@ -18,7 +18,11 @@ export class Chatbot {
       respuestas: [mensaje],
       fecha: new Date().toLocaleDateString() 
     };
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'x-api-key': 'OpmTjbbI0u4qvjDyCODAy17wghfC6jpbAVdHM570'
+    });
 
-    return this.http.post<any>(`${this.apiUrl}/ruta_de_tu_api`, datos);
+    return this.http.put<any>(`${this.apiUrl}`, datos, {headers: headers});
   }
 }
