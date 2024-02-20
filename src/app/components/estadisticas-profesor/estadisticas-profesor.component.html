@@ -2,14 +2,65 @@
     <div class="w-100 h-100">
         <div id="barra-lateral" class="d-flex align-items-center">
             <div id="user-div" class="d-flex justify-content-center align-items-center">
-                <img id="userimg" src="../../../assets/img/UserImg.png" alt="UserImg">
+                <img (click)="profile()" id="userimg" src="../../../assets/img/UserImg.png" alt="UserImg">
             </div>
             <div id="logo-div" class="d-flex justify-content-center align-items-center">
                 <img id="logoimg" src="../../../assets/img/LogoBD.png" alt="LogImg">
             </div>
         </div>
         <div id="contenido-chat-div" class="d-flex justify-content-center align-items-center">
-            <div id="chat-div"  class="d-flex justify-content-center align-items-center">
+            <div id="chat-div">
+                <div id="header" class="h-25 w-100">
+                    <div class="row h-50 w-100 align-items-end px-5">
+                        <h2 class="col-4 me-auto">**Nombre de la Clase**</h2>
+                        <div class="col-3 ms-auto">
+                            <h5>Fecha:  {{ rangeValues.lower }} - {{ rangeValues.upper }}</h5>
+                            <ion-range aria-label="Dual Knobs Range" [dualKnobs]="true" [value]="rangeValues" pin="true" (ionChange)="onRangeChange($event)"></ion-range>
+                        </div>
+                    </div>
+                    <hr style="width: 95%; margin: 2;">
+                    <div></div>
+                    <div class="align-items-center">
+                        <div class="row align-items-center my-3">
+                            <div class="col-4 d-flex align-items-center justify-content-center">
+                                <div class="card ">
+                                    <div class="card-body">
+                                      Número de Alumnos: 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 d-flex align-items-center justify-content-center">
+                                <div class="card">
+                                    <div class="card-body">
+                                      Profesores: 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-4 d-flex align-items-center justify-content-center">
+                                <select id="select-class" class="form-select"  size="1">
+                                    <option selected>Clase</option>
+                                    <option *ngFor="let class of getClasses() | async" value="1">One</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col align-items-center m-3">
+                                <div class="chart"><canvas id="feelingsChart"></canvas></div>
+                            </div>
+                            <div class="col align-items-center m-3">
+                                <div class="chart"><canvas id="feelingsPerGender"></canvas></div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center">
+                            <div class="col align-items-center m-3">
+                                <div class="chart"><canvas id="messagePerDateChart"></canvas></div>
+                            </div>
+                            <div class="col align-items-center m-3">
+                                <div class="chart"><canvas id="sentencesChart"></canvas></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>    
