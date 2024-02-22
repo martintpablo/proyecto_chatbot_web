@@ -15,9 +15,9 @@
             <div id="chat-div">
                 <div id="header" class="h-25 w-100">
                     <div class="row h-50 w-100 align-items-end px-5">
-                        <h2 class="col-4 me-auto">**Nombre del Alumno**</h2>
+                        <h2 class="col-4 me-auto" style="font-family: 'Titan One';">**Nombre del Alumno**</h2>
                         <div class="col-2 me-auto">
-                            <h4>Clase: clase</h4>
+                            <h4 style="font-family: 'Titan One';">Clase: clase</h4>
                         </div>
                         <div class="col-3 ms-auto">
                             <h5>Fecha:  {{ rangeValues.lower }} - {{ rangeValues.upper }}</h5>
@@ -25,15 +25,16 @@
                         </div>
                     </div>
                     <hr style="width: 95%; margin: 2;">
-                    <div></div>
-                    <p>MENSAJE SOBRE LOS DATOS RECOGIDOS</p>
-                    <div class="align-items-center">
-                        <div class="row align-items-center">
+                    <div class="DataMessage">
+                        <p>MENSAJE SOBRE LOS DATOS RECOGIDOS</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center" style="padding-top: 5%;">
+                        <div class="row">
                             <div class="col">
-                                <div class="chart"><canvas id="messagePerDateChart"></canvas></div>
+                                <div class="messagePerDateChart"><canvas id="messagePerDateChart"></canvas></div>
                             </div>
-                            <div class="col align-items-center">
-                                <div class="chart"><canvas id="feelingsChart"></canvas></div>
+                            <div class="col">
+                                <div class="feelingsChart"><canvas id="feelingsChart"></canvas></div>
                             </div>
                         </div>
                     </div>
