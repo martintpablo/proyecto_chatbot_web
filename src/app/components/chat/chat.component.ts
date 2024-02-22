@@ -20,7 +20,8 @@ export class ChatComponent implements OnInit {
   responder: boolean = false;
   aparece: boolean = false;
   elementosHTML: String[] = [];
-  
+  @ViewChild('chatScroll') chatScroll!: any;
+
   constructor(private router: Router) {
 
   }
@@ -77,6 +78,7 @@ export class ChatComponent implements OnInit {
     this.ngOnInit();
     this.responder = true;
     this.inputText.nativeElement.value = '';
+    this.scrollToBottom();
   }
   public aparicionBarra(): boolean {
     var fechaHoyFormateada = this.formatDate(this.fechaDeHoy)
@@ -98,4 +100,11 @@ export class ChatComponent implements OnInit {
     return `${day}-${month}-${year}`;
   }
 
+  scrollToBottom(): void {
+    this.chatScroll.nativeElement.scrollTop = this.chatScroll.nativeElement.scrollHeight;
+  }
+
+  ngAfterViewChecked() {
+    this.scrollToBottom();
+  }
 }
