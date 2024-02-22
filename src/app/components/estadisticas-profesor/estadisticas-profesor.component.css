@@ -83,7 +83,50 @@
     border-style: solid;
     border-color: black;
     border-width: 4px;
-    height: 300px;
+    height: 30%;
+    width: 75%;
+    margin-left: 10%;
+
+}
+
+.chartGenre {
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+    height: 30%;
+    width: 75%;
+    margin-left: -20%;
+}
+
+.chartmessage {
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+    height:30%;
+    width: 75%;
+    margin-top: 3%;
+    margin-left: 10%;
+}
+
+
+.ValueChart {
+    border-radius: 25px;
+    border-style: solid;
+    border-color: black;
+    border-width: 4px;
+    width:38%;
+    margin-left: -20%;
+    margin-top: 3%;
+    
+}
+
+.DataMessage {
+    font-family: "Titan One";
+    margin-left: 10%;
+    margin-bottom: -2%
+
 }
 
 .card {
