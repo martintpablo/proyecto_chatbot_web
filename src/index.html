@@ -10,20 +10,5 @@
 </head>
 <body>
   <app-root></app-root>
-  <py-env>
-    - micropip
-    - asyncio
-  </py-env>
-  <py-script>
-    async def install_packages():
-      await micropip.install('nltk', keep_going=True)
-      await micropip.install('translate', keep_going=True)
-
-    asyncio.create_task(install_packages())
-  </py-script>
-  <py-config>
-    [splashscreen]
-      enabled = false
-  </py-config>
 </body>
 </html>

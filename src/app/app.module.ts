@@ -6,10 +6,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { AlumnosComponent } from './components/alumnos/alumnos.component';
-import { BotComponent } from './components/bot/bot.component';
 import { RedirectComponent } from './components/redirect/redirect.component';
 import { LoginComponentComponent } from './components/login-component/login-component.component';
-import { PyScriptDirective } from './directives/py-script.directive';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoleRegisterComponent } from './components/role-register/role-register.component';
@@ -28,10 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     ChatComponent,
     AlumnosComponent,
-    BotComponent,
     RedirectComponent,
     LoginComponentComponent,
-    PyScriptDirective,
     RegisterComponent,
     RoleRegisterComponent,
     MessageComponent,
