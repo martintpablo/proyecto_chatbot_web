@@ -67,6 +67,7 @@
     font-weight: bold;
     font-size: large;
     margin-bottom: 0;
+    font-size: 22px;
 }
 
 #estadisticasimg {
@@ -103,6 +104,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 22px;
 
 }
 
@@ -113,6 +115,7 @@
     justify-content: end;
     align-items: baseline;
     column-gap: 1%;
+    font-size: 22px;
 }
 
 .hora {
@@ -139,6 +142,7 @@
     align-items: baseline;
     column-gap: 1%;
     text-align: left;
+    font-size: 22px;
 }
 
 .hora_bot {
@@ -196,11 +200,16 @@
 
 }
 
+#textinput:focus::placeholder {
+    color: transparent;
+}
+
 #textinput:hover,
 #textinput:focus {
     outline: none;
     box-shadow: none;
     border: none;
+    
 }
 
 @font-face {
