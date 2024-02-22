@@ -1,10 +1,12 @@
 import json
 from django.views.decorators.csrf import csrf_exempt
-from django.http import JsonResponse, HttpResponse
+from django.http import HttpResponseNotAllowed, JsonResponse, HttpResponse
 
+from prueba.preguntas import preguntas_materias, preguntas_companeros, preguntas_profesores, preguntas_centro, estudios_generales, preguntas_personales, preguntas_examenes
+
+'''
 import nltk
 import random
-from prueba.preguntas import preguntas_materias, preguntas_companeros, preguntas_profesores, preguntas_centro, estudios_generales, preguntas_personales, preguntas_examenes
 import joblib
 
 
@@ -110,17 +112,15 @@ for categoria,variable in zipper:
     dict_resultados_analisis[categoria].append(["resultados_analisis",suma/len(variable) ])
     
     print(categoria,dict_resultados_analisis[categoria])
-
+'''
 @csrf_exempt
 def chatbot_view(request):
-    if request.method == 'GET':
-        response_data = {"message": "Hola. Has realizado una solicitud GET a la página de inicio."}
-        return JsonResponse(response_data)
-    elif request.method == 'POST':
-        response_data = {"message": "Hola. Has realizado una solicitud POST a la página de inicio."}
+    if request.path == '/api/chatbot/preguntas':
+        response_data = {"preguntas": [preguntas_materias, preguntas_companeros, preguntas_profesores, preguntas_centro, estudios_generales, preguntas_personales, preguntas_examenes] }
         return JsonResponse(response_data)
     else:
-        return HttpResponse(status=405) 
+        response_data = {"message": "Hola" + request.method }
+        return JsonResponse(response_data)
     
 
 # Instalar antes de ejecutar el servidor

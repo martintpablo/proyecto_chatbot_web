@@ -17,16 +17,11 @@
                     <div id="mensajes">
                         <div class="fecha">
                             <hr class="barras">
-                            <p class="fecha-chat">{{ fechaDeAyer | date:'dd/MM/yyyy' }}</p>
+                            <p class="fecha-chat">{{ fechaDeHoy | date:'dd/MM/yyyy' }}</p>
                             <hr class="barras">
                         </div>
                         <div *ngFor="let mensaje of mensajes; let i = index" class="mensaje"
                             [ngClass]="i % 2 == 0 ? 'mensaje_bot' : 'mensaje_usuario'">
-                            <!-- <div class="info">
-                                <h5 class="usuario">{{ mensaje.usuario }}</h5>
-                                <div class="contenido">{{ mensaje.texto }}</div>
-                                <div class="hora">{{ mensaje.hora }}</div>
-                            </div> -->
                             <ng-container *ngIf="i % 2 != 0; else par">
                                 <div class="info">
                                     <h5 class="usuario">{{ mensaje.usuario }}</h5>
