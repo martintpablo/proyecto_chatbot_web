@@ -20,6 +20,9 @@ export class ChatComponent implements OnInit {
   pregunta: string = "¡Hola! Soy STAC. Tengamos una pequeña conversación para comprobar cómo te sientes.";
   responder: boolean = false;
   aparece: boolean = false;
+  bye: string = "¡¡¡Gracias por participar!!! A continuación tendrás los resultados de las respuestas Mi trabajo aquí ha terminado, hasta la próxima...🖐️🖐️";
+  repeat: string = "Por favor, responde con al menos 3 palabras para poder analizar correctamente como te sientes."
+  finish: boolean = false;
   elementosHTML: String[] = [];
   @ViewChild('chatScroll') chatScroll!: any;
 
@@ -66,6 +69,8 @@ export class ChatComponent implements OnInit {
 
 
   enviarDatos(inputValue: string) {
+    const lenghtChecker = inputValue.split(" ");
+
     const pregunta = this.pregunta; 
     const respuesta = inputValue; 
 
@@ -87,24 +92,32 @@ export class ChatComponent implements OnInit {
       userMessage: true
     };
 
+    if (lenghtChecker.length < 3) {
+      this.pregunta = this.repeat
+    } else {
+      if (this.i < this.preguntas.length) {
+        this.pregunta = this.preguntas[this.i][this.j]
+
+        if (this.j < this.preguntas[this.i].length - 1) {
+          this.j = this.j + 1
+        } else {
+          this.i = this.i + 1
+          this.j = 0
+        }
+      } else {
+        this.pregunta = this.bye
+      }
+    }
+
+    if (this.pregunta == this.bye) {
+      this.finish = true
+    }
+
     this.mensajes.push(mensaje);
     this.setBot();
     this.responder = true;
     this.inputText.nativeElement.value = '';
     this.scrollToBottom();
-
-    if (this.i < this.preguntas.length) {
-      this.pregunta = this.preguntas[this.i][this.j]
-
-      if (this.j < this.preguntas[this.i].length - 1) {
-        this.j = this.j + 1
-      } else {
-        this.i = this.i + 1
-        this.j = 0
-      }
-    } else {
-      this.pregunta = "¡¡¡Gracias por participar!!! A continuación tendrás los resultados de las respuestas Mi trabajo aquí ha terminado, hasta la próxima...🖐️🖐️"
-    }
   }
 
   public aparicionBarra(): boolean {

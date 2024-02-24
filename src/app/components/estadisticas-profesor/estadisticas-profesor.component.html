@@ -2,7 +2,7 @@
     <div class="w-100 h-100">
         <div id="barra-lateral" class="d-flex align-items-center">
             <div id="user-div" class="d-flex justify-content-center align-items-center">
-                <img (click)="profile()" id="userimg" src="../../../assets/img/UserImg.png" alt="UserImg">
+                <img (click)="profile()" id="userimg" src="../../../assets/img/UserImg.png" data-bs-toggle="modal" data-bs-target="#chooseDatosModal"  alt="UserImg">
             </div>
             <div id="logo-div" class="d-flex justify-content-center align-items-center">
                 <img id="logoimg" src="../../../assets/img/LogoBD.png" alt="LogImg">
@@ -65,5 +65,6 @@
                 </div>
             </div>
         </div>
+        <app-datos-perfil></app-datos-perfil>
     </div>    
 </div>

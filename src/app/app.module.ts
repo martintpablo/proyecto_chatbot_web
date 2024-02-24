@@ -11,7 +11,6 @@ import { LoginComponentComponent } from './components/login-component/login-comp
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoleRegisterComponent } from './components/role-register/role-register.component';
-import { MessageComponent } from './components/message/message.component';
 import { EstadisticasAlumnoComponent } from './components/estadisticas-alumno/estadisticas-alumno.component';
 import { PorffConfirmComponent } from './components/porff-confirm/porff-confirm.component';
 import { EstadisticasProfesorComponent } from './components/estadisticas-profesor/estadisticas-profesor.component';
@@ -31,7 +30,6 @@ import { DatosPerfilComponent } from './components/datos-perfil/datos-perfil.com
     LoginComponentComponent,
     RegisterComponent,
     RoleRegisterComponent,
-    MessageComponent,
     EstadisticasAlumnoComponent,
     PorffConfirmComponent,
     EstadisticasProfesorComponent,

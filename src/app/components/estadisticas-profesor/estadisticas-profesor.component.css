@@ -136,3 +136,7 @@
 #select-class {
     width: 30%;
 }
+
+#user-div {
+    cursor: pointer;
+}

@@ -39,7 +39,6 @@
                                 <div class="info_bot">
                                     <h5 class="usuario">{{ mensaje.usuario }}</h5>
                                     <div class="contenido_bot">{{ mensaje.texto }}</div>
-                                    <!-- <div class="hora_bot">{{ mensaje.hora }}</div> -->
                                 </div>
                                 <div class="user_img">
                                     <img class="imagen" src="../../../assets/img/LogoCHAT.png" alt="icono_usuario">
@@ -50,8 +49,13 @@
                 </div>
                 <div id="entrada">
                     <input id="textinput" #inputText
+                        *ngIf="!finish"
                         (keyup.enter)="inputText.value !== '' && enviarDatos(inputText.value)"
                         placeholder="Escribe a STAC...">
+                    <input id="textinput" #inputText
+                        *ngIf="finish"
+                        (keyup.enter)="inputText.value !== '' && enviarDatos(inputText.value)"
+                        placeholder="Has respondido a todas las preguntas. ¡Mira tus resultados!" disabled>
                     <div id="marcoEnvio">
                         <hr class="vertical">
                         <button id="sendButton" (click)="inputText.value !== '' && enviarDatos(inputText.value)">
