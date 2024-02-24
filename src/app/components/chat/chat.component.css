@@ -239,3 +239,7 @@
     background-color: transparent;
     border: none;
 }
+
+#user-div {
+    cursor: pointer;
+}

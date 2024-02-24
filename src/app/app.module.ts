@@ -19,6 +19,7 @@ import { ListaAlumnosComponent } from './components/lista-alumnos/lista-alumnos.
 import { StudentOptionComponent } from './components/student-option/student-option.component';
 import { IonicModule } from '@ionic/angular';
 import { HttpClientModule } from '@angular/common/http';
+import { DatosPerfilComponent } from './components/datos-perfil/datos-perfil.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     PorffConfirmComponent,
     EstadisticasProfesorComponent,
     ListaAlumnosComponent,
-    StudentOptionComponent
+    StudentOptionComponent,
+    DatosPerfilComponent
   ],
   imports: [
     BrowserModule,

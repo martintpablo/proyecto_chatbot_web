@@ -2,7 +2,7 @@
     <div class="w-100 h-100">
         <div id="barra-lateral" class="d-flex align-items-center">
             <div id="user-div" class="d-flex justify-content-center align-items-center">
-                <img id="userimg" src="../../../assets/img/UserImg.png" alt="UserImg">
+                <img id="userimg" src="../../../assets/img/UserImg.png" data-bs-toggle="modal" data-bs-target="#chooseDatosModal" alt="UserImg">
             </div>
             <div id="estadisticas-div" class="d-flex justify-content-center align-items-center">
                 <img (click)="toStats()" id="estadisticasimg" src="../../../assets/img/EstadisticasImg.png" alt="UserImg">
@@ -62,5 +62,6 @@
                 </div>
             </div>
         </div>
+        <app-datos-perfil></app-datos-perfil>
     </div>
 </div>
