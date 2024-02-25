@@ -2,9 +2,9 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseNotAllowed, JsonResponse, HttpResponse
 
-from prueba.preguntas import preguntas_materias, preguntas_companeros, preguntas_profesores, preguntas_centro, estudios_generales, preguntas_personales, preguntas_examenes
+from prueba.preguntas import preguntas_materias, preguntas_companeros, preguntas_trabajos,preguntas_profesores, preguntas_centro, estudios_generales, preguntas_personales, preguntas_examenes
 
-'''
+
 import nltk
 import random
 import joblib
@@ -25,7 +25,30 @@ preguntas_trabajos_clave = "¿Sentiste que tus contribuciones en los trabajos fu
 preguntas_personales_clave = "¿Cómo has experimentado emocionalmente tu propio crecimiento personal en el último año?"
 preguntas_examenes_clave = "¿Qué haces si no estás satisfecho con tus resultados de los exámenes?"
 
+def crear_arrays(preguntas,pregunta_clave):
+  array=[]
+  # Seleccionar dos preguntas aleatorias
+  pregunta_aleatoria_1 = random.choice(preguntas)
+  pregunta_aleatoria_2 = random.choice(preguntas)
+  # Crear un nuevo array para almacenar las preguntas seleccionadas
+  array = [pregunta_aleatoria_1, pregunta_aleatoria_2,pregunta_clave]
+  return array
 
+preguntas_materias_completa=crear_arrays(preguntas_materias,pregunta_materia_clave)
+preguntas_companeros_completa=crear_arrays(preguntas_companeros,pregunta_companeros_clave)
+preguntas_profesores_completa=crear_arrays(preguntas_profesores,preguntas_profesores_clave)
+preguntas_centro_completa=crear_arrays(preguntas_centro,preguntas_centro_clave)
+estudios_generales_completa=crear_arrays(estudios_generales,preguntas_estudios_clave)
+preguntas_trabajos_completa=crear_arrays(preguntas_trabajos,preguntas_trabajos_clave)
+preguntas_personales_completa=crear_arrays(preguntas_personales,preguntas_personales_clave)
+preguntas_examenes_completa=crear_arrays(preguntas_examenes,preguntas_examenes_clave)
+
+todas_las_preguntas=[preguntas_materias_completa,preguntas_companeros_completa,preguntas_profesores_completa,preguntas_centro_completa,estudios_generales_completa,
+                     preguntas_trabajos_completa,preguntas_personales_completa,preguntas_examenes_completa]
+
+
+
+'''
 def hacer_preguntas(categoria, pregunta_clave, preguntas):
     respuestas_categoria = []
     categoria_formateada = categoria.split()[-1].capitalize()  # Extraer la última palabra y capitalizar
@@ -62,6 +85,7 @@ def hacer_preguntas(categoria, pregunta_clave, preguntas):
         print(f"{respuesta_usuario}")
 
     return tuple(respuestas_categoria)
+'''
 
 print("\n¡Hola! Soy STAC. Tengamos una pequeña conversación para comprobar cómo te sientes.")
 while True:
@@ -71,6 +95,7 @@ while True:
     else:
         print("¡Vamos! Inténtalo de nuevo escribiendo 'empezar'. ¡Estoy emocionado de conocerte!")
 
+'''
 # Lista para almacenar respuestas del usuario
 respuestas_materias = hacer_preguntas("Preguntas sobre materias", pregunta_materia_clave, preguntas_materias)
 respuestas_companeros = hacer_preguntas("Preguntas sobre compañeros", pregunta_companeros_clave, preguntas_companeros)
@@ -116,7 +141,7 @@ for categoria,variable in zipper:
 @csrf_exempt
 def chatbot_view(request):
     if request.path == '/api/chatbot/preguntas':
-        response_data = {"preguntas": [preguntas_materias, preguntas_companeros, preguntas_profesores, preguntas_centro, estudios_generales, preguntas_personales, preguntas_examenes] }
+        response_data = {"preguntas": todas_las_preguntas }
         return JsonResponse(response_data)
     else:
         response_data = {"message": "Hola" + request.method }
