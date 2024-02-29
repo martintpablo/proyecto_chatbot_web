@@ -25,14 +25,18 @@ preguntas_trabajos_clave = "¿Sentiste que tus contribuciones en los trabajos fu
 preguntas_personales_clave = "¿Cómo has experimentado emocionalmente tu propio crecimiento personal en el último año?"
 preguntas_examenes_clave = "¿Qué haces si no estás satisfecho con tus resultados de los exámenes?"
 
-def crear_arrays(preguntas,pregunta_clave):
-  array=[]
-  # Seleccionar dos preguntas aleatorias
-  pregunta_aleatoria_1 = random.choice(preguntas)
-  pregunta_aleatoria_2 = random.choice(preguntas)
-  # Crear un nuevo array para almacenar las preguntas seleccionadas
-  array = [pregunta_aleatoria_1, pregunta_aleatoria_2,pregunta_clave]
-  return array
+def crear_arrays(preguntas, pregunta_clave):
+    preguntas_disponibles = preguntas.copy()
+
+    if pregunta_clave in preguntas_disponibles:
+        preguntas_disponibles.remove(pregunta_clave)
+
+    pregunta_aleatoria_1 = random.choice(preguntas_disponibles)
+    preguntas_disponibles.remove(pregunta_aleatoria_1)
+    pregunta_aleatoria_2 = random.choice(preguntas_disponibles)
+    array = [pregunta_aleatoria_1, pregunta_aleatoria_2,pregunta_clave]
+
+    return array
 
 preguntas_materias_completa=crear_arrays(preguntas_materias,pregunta_materia_clave)
 preguntas_companeros_completa=crear_arrays(preguntas_companeros,pregunta_companeros_clave)
@@ -85,8 +89,6 @@ def hacer_preguntas(categoria, pregunta_clave, preguntas):
         print(f"{respuesta_usuario}")
 
     return tuple(respuestas_categoria)
-'''
-
 print("\n¡Hola! Soy STAC. Tengamos una pequeña conversación para comprobar cómo te sientes.")
 while True:
     inicio = input("Para empezar con las preguntas, escribe 'empezar': ")
@@ -95,7 +97,6 @@ while True:
     else:
         print("¡Vamos! Inténtalo de nuevo escribiendo 'empezar'. ¡Estoy emocionado de conocerte!")
 
-'''
 # Lista para almacenar respuestas del usuario
 respuestas_materias = hacer_preguntas("Preguntas sobre materias", pregunta_materia_clave, preguntas_materias)
 respuestas_companeros = hacer_preguntas("Preguntas sobre compañeros", pregunta_companeros_clave, preguntas_companeros)
@@ -141,8 +142,26 @@ for categoria,variable in zipper:
 @csrf_exempt
 def chatbot_view(request):
     if request.path == '/api/chatbot/preguntas':
-        response_data = {"preguntas": todas_las_preguntas }
-        return JsonResponse(response_data)
+        if request.method == 'GET':
+            response_data = {"preguntas": todas_las_preguntas }
+            return JsonResponse(response_data)
+        elif request.method == 'POST':
+            try:
+            # Obtener los datos del cuerpo de la solicitud POST
+                data = json.loads(request.body)
+                
+                # Aquí puedes procesar los datos como desees
+                # Por ejemplo, imprimirlos en la consola
+                print(data)
+                print(data.respuestas)
+            
+                # Puedes devolver una respuesta al cliente si es necesario
+                return JsonResponse({'message': 'Datos recibidos correctamente'})
+            except json.JSONDecodeError as e:
+                # Manejar errores de decodificación JSON
+                return JsonResponse({'error': 'Error de decodificación JSON'}, status=400)
+        else:
+            return HttpResponse(status=405) 
     else:
         response_data = {"message": "Hola" + request.method }
         return JsonResponse(response_data)

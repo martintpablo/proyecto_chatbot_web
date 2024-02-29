@@ -1,6 +1,6 @@
 export interface User {
     id:string,
-    prof:boolean,
+    role:string,
     name:string,
     surname:string,
     birthdate:string,

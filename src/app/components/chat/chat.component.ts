@@ -14,10 +14,11 @@ export class ChatComponent implements OnInit {
   j = 0
   id: string = "";
   preguntas: string[] = [];
+  preguntasEnviar: string[] = []
   respuestas: string[] = [];
   @ViewChild('inputText') inputText: any;
   mensajes: any[] = [];
-  pregunta: string = "¡Hola! Soy STAC. Tengamos una pequeña conversación para comprobar cómo te sientes.";
+  pregunta: string = "¡Hola! Soy STAC. Tengamos una pequeña conversación para comprobar cómo te sientes. Escribe \"Estoy listo para comenzar\"";
   responder: boolean = false;
   aparece: boolean = false;
   bye: string = "¡¡¡Gracias por participar!!! A continuación tendrás los resultados de las respuestas Mi trabajo aquí ha terminado, hasta la próxima...🖐️🖐️";
@@ -40,6 +41,19 @@ export class ChatComponent implements OnInit {
       }
     });
   }
+
+  
+  sendResponses(responses: Object) {
+    this.http.post("http://localhost:8000/api/chatbot/preguntas", responses).subscribe({
+      next: (response: any) => {
+        
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    });
+  }
+
 
   toStats() {
     this.router.navigate(['/estadisticas-alumno']);
@@ -76,12 +90,12 @@ export class ChatComponent implements OnInit {
 
     const datos = {
       usuario: environment["nombre_usuario"],
-      preguntas: this.preguntas.concat(pregunta), 
-      
+      preguntas: this.preguntasEnviar.concat(pregunta), 
       respuestas: this.respuestas.concat(respuesta),
       fecha: this.formatDate(this.fechaDeHoy)
     };
 
+    this.preguntasEnviar.push(pregunta);
     this.respuestas.push(inputValue);
     this.inputText.nativeElement.value = '';
 
@@ -106,6 +120,9 @@ export class ChatComponent implements OnInit {
         }
       } else {
         this.pregunta = this.bye
+        datos.preguntas.shift()
+        datos.respuestas.shift()
+        this.sendResponses(datos)
       }
     }
 
@@ -118,6 +135,7 @@ export class ChatComponent implements OnInit {
     this.responder = true;
     this.inputText.nativeElement.value = '';
     this.scrollToBottom();
+    console.log(datos)
   }
 
   public aparicionBarra(): boolean {
