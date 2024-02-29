@@ -139,6 +139,7 @@ for categoria,variable in zipper:
     
     print(categoria,dict_resultados_analisis[categoria])
 '''
+puntuaciones=[]
 @csrf_exempt
 def chatbot_view(request):
     if request.path == '/api/chatbot/preguntas':
@@ -152,9 +153,34 @@ def chatbot_view(request):
                 
                 # Aquí puedes procesar los datos como desees
                 # Por ejemplo, imprimirlos en la consola
+                texto_completo=str(data)
+                # Encontrar la posición de 'respuestas'
+                indice_respuestas = texto_completo.find("respuestas': ")
+
+                # Encontrar la posición de 'fecha' después de ',  'respuestas'
+                indice_fecha = texto_completo.find(", 'fecha'", indice_respuestas)
+
+                # Si no se encuentra 'fecha' después de ',  'respuestas', prueba sin la coma
+                if indice_fecha == -1:
+                    indice_fecha = texto_completo.find(" 'fecha'", indice_respuestas)
+
+                # Extraer la porción de texto entre 'respuestas' y 'fecha' sin incluir 'respuestas'
+                texto = texto_completo[indice_respuestas + len("respuestas': "):indice_fecha]
+                texto_modificado = texto.replace('[', '').replace(']', '').replace("'", '')
+
+                # Se realiza el analisis
+                array_resultado = texto_modificado.split(",")
+                for frase in array_resultado:
+                    puntuacion=modelo.predict([frase])[0]
+                    puntuacion= round(puntuacion, 2)
+                    puntuaciones.append(puntuacion)
+                data["puntuaciones"]=puntuaciones
                 print(data)
-                print(data.respuestas)
-            
+
+
+
+
+
                 # Puedes devolver una respuesta al cliente si es necesario
                 return JsonResponse({'message': 'Datos recibidos correctamente'})
             except json.JSONDecodeError as e:
