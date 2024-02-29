@@ -10,7 +10,7 @@ export class StudentService {
   private _userList: User[] = [
     {
         id:"0",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -20,7 +20,7 @@ export class StudentService {
     },
     {
         id:"1",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -30,7 +30,7 @@ export class StudentService {
     },
     {
         id:"2",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -40,7 +40,7 @@ export class StudentService {
     },
     {
         id:"3",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -50,7 +50,7 @@ export class StudentService {
     },
     {
         id:"4",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -60,7 +60,7 @@ export class StudentService {
     },
     {
         id:"5",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -70,7 +70,7 @@ export class StudentService {
     },
     {
         id:"6",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -80,7 +80,7 @@ export class StudentService {
     },
     {
         id:"7",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -90,7 +90,7 @@ export class StudentService {
     },
     {
         id:"8",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -100,7 +100,7 @@ export class StudentService {
     },
     {
         id:"9",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -110,7 +110,7 @@ export class StudentService {
     },
     {
         id:"10",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -120,7 +120,7 @@ export class StudentService {
     },
     {
         id:"11",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -130,7 +130,7 @@ export class StudentService {
     },
     {
         id:"12",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -140,7 +140,7 @@ export class StudentService {
     },
     {
         id:"13",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -150,7 +150,7 @@ export class StudentService {
     },
     {
         id:"14",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -160,7 +160,7 @@ export class StudentService {
     },
     {
         id:"15",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -170,7 +170,7 @@ export class StudentService {
     },
     {
         id:"16",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -180,7 +180,7 @@ export class StudentService {
     },
     {
         id:"17",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -190,7 +190,7 @@ export class StudentService {
     },
     {
         id:"18",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
@@ -200,7 +200,7 @@ export class StudentService {
     },
     {
         id:"19",
-        prof:false,
+        role:"proffesor",
         name:"Alumno",
         surname:"Apellido",
         birthdate:"11/01/2003",
