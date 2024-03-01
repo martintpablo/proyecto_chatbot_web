@@ -85,7 +85,7 @@ export class UserService {
       gender:user.gender,
       email:user.email,
       class:user.class,
-      birthdate:user.birthdate,
+      birthdate:this.formatDate(new Date(user.birthdate)),
       password:user.password,
       createUser: "True"
     } ,{ headers: head }).subscribe({
@@ -96,5 +96,12 @@ export class UserService {
         console.log(err);
       }
     });
+  }
+
+  private formatDate(date: Date): string {
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+    return `${day}-${month}-${year}`;
   }
 }
