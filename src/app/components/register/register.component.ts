@@ -18,11 +18,11 @@ export class RegisterComponent implements OnInit {
   ) { 
     this.form = this.formBuilder.group({
       name:["", [Validators.required]],
-      role:[this.userSvc.role],
+      rol:[this.userSvc.rol],
       surname:["", [Validators.required]],
-      gender:["Seleccione", [Validators.required]],
+      sex:["Seleccione", [Validators.required]],
       email:["", [Validators.required, Validators.email]],
-      class:["", [Validators.required]],
+      classes:["", [Validators.required]],
       birthdate:["", [Validators.required]],
       password:["", [Validators.required]],
       confirmPassword:["", Validators.required],
@@ -31,7 +31,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    console.log(this.userSvc.rol)
   }
   mostrarFormulario: boolean = false;
 

@@ -36,6 +36,10 @@ export class ChatComponent implements OnInit {
 
   }
 
+  processingAndUploading(responses: Object) {
+    this.sendResponses(responses)
+  }
+
   bringQuestions() {
     this.http.get("http://localhost:8000/api/chatbot/").subscribe({
       next: (response: any) => {
@@ -50,10 +54,10 @@ export class ChatComponent implements OnInit {
   
   sendResponses(responses: Object) {
     let head = new HttpHeaders({'x-api-key':'OpmTjbbI0u4qvjDyCODAy17wghfC6jpbAVdHM570', 'Content-Type':'application/json'});
-
+    console.log(responses)
     this.http.put('https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/?results="False"', responses, { headers: head }).subscribe({
       next: (response: any) => {
-        
+        this.getCleanResponses()
       },
       error: (err: any) => {
         console.log(err);
@@ -64,9 +68,11 @@ export class ChatComponent implements OnInit {
   getCleanResponses() {
     let head = new HttpHeaders({'x-api-key':'OpmTjbbI0u4qvjDyCODAy17wghfC6jpbAVdHM570', 'Content-Type':'application/json'});
 
-    this.http.get('https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/?results=False&date=29-2-2024&name=Usuario&justOne=True', { headers: head }).subscribe({
+    this.http.get('https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/?results=False&date='+this.formatDate(this.fechaDeHoy)+'&name='+this.userSvc.currentUser?.name+'&justOne=True', { headers: head }).subscribe({
       next: (response: any) => {
+        console.log(response)
         this.cleanResponses = response
+        this.analyzeResponses(response)
       },
       error: (err: any) => {
         console.log(err);
@@ -75,9 +81,11 @@ export class ChatComponent implements OnInit {
   }
 
   analyzeResponses(responses: Object) {
+    console.log(responses)
     this.http.post("http://localhost:8000/api/chatbot/preguntas", responses).subscribe({
       next: (response: any) => {
-
+        console.log(response)
+        this.getAnalyzedResponses()
       },
       error: (err: any) => {
         console.log(err);
@@ -88,7 +96,9 @@ export class ChatComponent implements OnInit {
   getAnalyzedResponses() {
     this.http.get("http://localhost:8000/api/chatbot/preguntas").subscribe({
       next: (response: any) => {
+        console.log(response)
         this.settledResponses = response
+        this.uploadResponses(response.datos)
       },
       error: (err: any) => {
         console.log(err);
@@ -98,10 +108,11 @@ export class ChatComponent implements OnInit {
 
   uploadResponses(responses: Object) {
     let head = new HttpHeaders({'x-api-key':'OpmTjbbI0u4qvjDyCODAy17wghfC6jpbAVdHM570', 'Content-Type':'application/json'});
+    console.log(responses)
 
-    this.http.put('https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/?results="True"', responses, { headers: head }).subscribe({
+    this.http.put('https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/?results=True', responses, { headers: head }).subscribe({
       next: (response: any) => {
-        
+        console.log(response)
       },
       error: (err: any) => {
         console.log(err);
@@ -184,12 +195,6 @@ export class ChatComponent implements OnInit {
         datos.respuesta.shift()
         console.log(datos)
         this.sendResponses(datos)
-        this.getCleanResponses()
-        console.log(this.cleanResponses)
-        this.analyzeResponses(this.cleanResponses)
-        this.getAnalyzedResponses()
-        console.log(this.settledResponses)
-        this.uploadResponses(this.settledResponses)
       }
     }
 

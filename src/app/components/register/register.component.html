@@ -23,12 +23,12 @@
           <div class="mb-3">
             <label for="genero" class="form-label">Género</label><br />
             <div class="input-contenedor">
-              <select name="genero" id="genero" class="rounded px-2" formControlName="gender" required>
+              <select name="genero" id="genero" class="rounded px-2" formControlName="sex" required>
                 <option selected disabled>Seleccione</option>
-                <option value="hombre">Hombre</option>
-                <option value="mujer">Mujer</option>
-                <option value="otro">Otro</option>
-                <option value="otro">Prefiero no contestar</option>
+                <option value="M">Hombre</option>
+                <option value="F">Mujer</option>
+                <option value="NB">No Binario</option>
+                <option value="NS/NC">Prefiero no contestar</option>
               </select>
             </div>
           </div>
@@ -43,7 +43,7 @@
           <div class="mb-3">
             <label for="curso" class="form-label">Curso</label>
             <div class="input-contenedor">
-              <input formControlName="class" type="text" class="" id="curso" placeholder="Ingrese su curso" required />
+              <input formControlName="classes" type="text" class="" id="curso" placeholder="Ingrese su curso" required />
             </div>
           </div>
           <div class="mb-3">

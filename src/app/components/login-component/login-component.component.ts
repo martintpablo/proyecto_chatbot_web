@@ -16,11 +16,5 @@ export class LoginComponentComponent {
   
   login(email: string, password: string) {
     this.userSvc.login(email, password)
-    
-    if (this.userSvc.currentUser?.role == "teacher") {
-      this.router.navigate(['/chat']);
-    } else {
-      this.router.navigate(['/estadisticas-profesor']);
-    }
   }
 }

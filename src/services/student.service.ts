@@ -9,43 +9,43 @@ export class StudentService {
 
     private _userList: User[] = [
         {
-            role:"proffesor",
+            rol:"proffesor",
             name:"Alumno",
             surname:"Apellido",
             birthdate:"11/01/2003",
             email:"a@a.com",
-            gender:"masc",
-            class:"1ºA",
+            sex:"masc",
+            classes:"1ºA",
             password:"a"
         },
         {
-            role:"proffesor",
+            rol:"proffesor",
             name:"Alumno",
             surname:"Apellido",
             birthdate:"11/01/2003",
             email:"a@a.com",
-            gender:"masc",
-            class:"1ºA",
+            sex:"masc",
+            classes:"1ºA",
             password:"a"
         },
         {
-            role:"proffesor",
+            rol:"proffesor",
             name:"Alumno",
             surname:"Apellido",
             birthdate:"11/01/2003",
             email:"a@a.com",
-            gender:"masc",
-            class:"1ºA",
+            sex:"masc",
+            classes:"1ºA",
             password:"a"
         },
         {
-            role:"proffesor",
+            rol:"proffesor",
             name:"Alumno",
             surname:"Apellido",
             birthdate:"11/01/2003",
             email:"a@a.com",
-            gender:"masc",
-            class:"1ºA",
+            sex:"masc",
+            classes:"1ºA",
             password:"a"
         },
       ]

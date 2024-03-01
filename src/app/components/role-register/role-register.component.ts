@@ -16,12 +16,12 @@ export class RoleRegisterComponent  {
 
   registerStudent() {
     this.router.navigate(['/register']);
-    this.userSvc.role = "student"
+    this.userSvc.rol = "student"
   }
 
   registerTeacher() {
     this.router.navigate(['/register']);
-    this.userSvc.role = "teacher"
+    this.userSvc.rol = "teacher"
   }
 
 }

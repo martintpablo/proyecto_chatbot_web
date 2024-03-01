@@ -1,10 +1,10 @@
 export interface User {
-    role:string,
+    rol:string,
     name:string,
     surname:string,
     birthdate:string,
     email:string,
-    gender:string,
-    class:string,
+    sex:string,
+    classes:string,
     password:string
   }

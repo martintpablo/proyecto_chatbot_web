@@ -8,14 +8,14 @@
         <div class="modal-body my-2">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex flex-column justify-content-around">
-                    <div *ngIf="user?.role=='student'" id="nombre" class="mb-2">Nombre: {{ user?.name }} (Estudiante)</div>
-                    <div *ngIf="user?.role=='teacher'" id="nombre" class="mb-2">Nombre: {{ user?.name }} (Profesor)</div>
+                    <div *ngIf="user?.rol=='student'" id="nombre" class="mb-2">Nombre: {{ user?.name }} (Estudiante)</div>
+                    <div *ngIf="user?.rol=='teacher'" id="nombre" class="mb-2">Nombre: {{ user?.name }} (Profesor)</div>
                     <div id="apellidos" class="mb-2">Apellidos: {{ user?.surname }}</div>
-                    <div id="genero" class="mb-2">Género: {{ user?.gender }}</div>
+                    <div id="genero" class="mb-2">Género: {{ user?.sex }}</div>
                 </div>
                 <div class="d-flex flex-column justify-content-around">
                     <div id="correo" class="mb-2">Email: {{ user?.email }}</div>
-                    <div id="curso" class="mb-2">Curso: {{ user?.class }}</div>
+                    <div id="curso" class="mb-2">Curso: {{ user?.classes }}</div>
                     <div id="fecha_nac" class="mb-2">Fecha de nacimiento: {{ user?.birthdate }}</div>
                 </div>
             </div>
