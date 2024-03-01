@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/services/user.service';
 
 @Component({
   selector: 'app-role-register',
@@ -8,10 +9,19 @@ import { Router } from '@angular/router';
 })
 export class RoleRegisterComponent  {
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private userSvc: UserService
+  ) { }
 
-  register() {
+  registerStudent() {
     this.router.navigate(['/register']);
+    this.userSvc.role = "student"
+  }
+
+  registerTeacher() {
+    this.router.navigate(['/register']);
+    this.userSvc.role = "teacher"
   }
 
 }

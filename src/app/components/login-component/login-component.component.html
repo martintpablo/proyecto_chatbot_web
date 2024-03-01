@@ -2,12 +2,12 @@
     <h1>Iniciar sesión</h1>
     <div class="contenedor">
         <div class="input-contenedor">
-            <input type="email" #email placeholder="Correo Electrónico" id = "email" name = "email" required />
+            <input type="email" #email placeholder="Correo Electrónico" id="email" name="email" required />
         </div>
         <div class="input-contenedor">
-            <input type="password" placeholder="Contraseña" id = "pwd" name = "password" required minlength="6" />
+            <input type="password" #pwd placeholder="Contraseña" id="pwd" name="password" required minlength="6" />
         </div>
-        <input type="submit" (click)="login(email.value)" value="Acceder" id="btn-login" class="button1" />
+        <input type="submit" (click)="login(email.value, pwd.value)" value="Acceder" id="btn-login" class="button1" />
         <p>
             ¿No tienes una cuenta?
             <button id="button" type="button" data-bs-toggle="modal" data-bs-target="#chooseRegistroModal">Registrarse</button>

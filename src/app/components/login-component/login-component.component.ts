@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { environment } from 'src/app/environment/Global';
+import { UserService } from 'src/services/user.service';
 
 @Component({
   selector: 'app-login-component',
@@ -9,17 +9,18 @@ import { environment } from 'src/app/environment/Global';
 })
 export class LoginComponentComponent {
 
-  constructor(private router: Router) { }
-  login(email: string) {
-    environment["nombre_usuario"] = email
-    // If the user is a student this is the route he has to follow, if its a teacher, go other
-    this.router.navigate(['/chat']);
+  constructor(
+    private userSvc: UserService,
+    private router: Router) { }
+
+  
+  login(email: string, password: string) {
+    this.userSvc.login(email, password)
+    
+    if (this.userSvc.currentUser?.role == "teacher") {
+      this.router.navigate(['/chat']);
+    } else {
+      this.router.navigate(['/estadisticas-profesor']);
+    }
   }
-
-
-  //chosen: boolean = false
-
-  //choose() {
-  //this.chosen = true
-  //}
 }

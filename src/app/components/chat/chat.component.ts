@@ -1,5 +1,4 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { environment } from 'src/app/environment/Global';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
@@ -85,7 +84,7 @@ export class ChatComponent implements OnInit {
   getAnalyzedResponses() {
     this.http.get("http://localhost:8000/api/chatbot/preguntas").subscribe({
       next: (response: any) => {
-
+        this.settledResponses = response
       },
       error: (err: any) => {
         console.log(err);
@@ -96,9 +95,9 @@ export class ChatComponent implements OnInit {
   uploadResponses(responses: Object) {
     let head = new HttpHeaders({'x-api-key':'OpmTjbbI0u4qvjDyCODAy17wghfC6jpbAVdHM570', 'Content-Type':'application/json'});
 
-    this.http.put('https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/?results="True"', { headers: head }).subscribe({
+    this.http.put('https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/?results="True"', responses, { headers: head }).subscribe({
       next: (response: any) => {
-        this.settledResponses = response
+        
       },
       error: (err: any) => {
         console.log(err);
@@ -154,7 +153,8 @@ export class ChatComponent implements OnInit {
     this.inputText.nativeElement.value = '';
 
     const mensaje = {
-      usuario: environment["nombre_usuario"] != "" ? environment["nombre_usuario"] : "Alumno",
+      // usuario: environment["nombre_usuario"] != "" ? environment["nombre_usuario"] : "Alumno",
+      usuario: "Alumno",
       texto: inputValue,
       fecha: this.formatDate(this.fechaDeHoy),
       userMessage: true

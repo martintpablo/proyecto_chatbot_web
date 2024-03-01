@@ -8,16 +8,15 @@
         <div class="modal-body my-2">
             <div class="d-flex justify-content-between align-items-center">
                 <div class="d-flex flex-column justify-content-around">
-                    <div id="nombre" class="mb-2">Nombre: Elena</div> <!-- Poner datos alumnos -->
-                    <div id="apellidos" class="mb-2">Apellidos: Brasero</div>
-                    <div id="genero" class="mb-2">Género: Mujer</div>
-                    <div id="correo" class="mb-2">Email: braserii@gmail.com</div>
+                    <div *ngIf="user?.role=='student'" id="nombre" class="mb-2">Nombre: {{ user?.name }} (Estudiante)</div>
+                    <div *ngIf="user?.role=='teacher'" id="nombre" class="mb-2">Nombre: {{ user?.name }} (Profesor)</div>
+                    <div id="apellidos" class="mb-2">Apellidos: {{ user?.surname }}</div>
+                    <div id="genero" class="mb-2">Género: {{ user?.gender }}</div>
                 </div>
                 <div class="d-flex flex-column justify-content-around">
-                    <div id="curso" class="mb-2">Curso: 1º Dawn</div> <!-- Poner datos alumnos -->
-                    <div id="fecha_nac" class="mb-2">Fecha de nacimiento: 1/1/2003</div>
-                    <div id="contraseña" class="mb-2">Contraseña: **********</div>
-                    <div id="vacio" class="mb-2 invisible">tonto quien lo lea</div>
+                    <div id="correo" class="mb-2">Email: {{ user?.email }}</div>
+                    <div id="curso" class="mb-2">Curso: {{ user?.class }}</div>
+                    <div id="fecha_nac" class="mb-2">Fecha de nacimiento: {{ user?.birthdate }}</div>
                 </div>
             </div>
         </div>

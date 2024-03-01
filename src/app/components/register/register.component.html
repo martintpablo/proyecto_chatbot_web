@@ -5,25 +5,25 @@
   <div id="form-container" class="w-50 border bg-light rounded-3 p-3 shadow-lg">
     <h1>Crear cuenta</h1>
     <hr />
-    <form id="form-register" class="w-100">
+    <form [formGroup]="form" (ngSubmit)="register()" (keyup.enter)="register()" id="form-register" class="w-100">
       <div class="d-flex px-4">
         <div class="w-50">
           <div class="mb-3">
             <label for="nombre" class="form-label">Nombre</label>
             <div class="input-contenedor">
-              <input type="text" id="nombre" placeholder="Ingrese su nombre" required />
+              <input formControlName="name" type="text" id="nombre" placeholder="Ingrese su nombre" required />
             </div>
           </div>
           <div class="mb-3">
             <label for="apellidos" class="form-label">Apellidos</label>
             <div class="input-contenedor">
-              <input type="text" class="" id="apellidos" placeholder="Ingrese sus apellidos" required />
+              <input formControlName="surname" type="text" class="" id="apellidos" placeholder="Ingrese sus apellidos" required />
             </div>
           </div>
           <div class="mb-3">
             <label for="genero" class="form-label">Género</label><br />
             <div class="input-contenedor">
-              <select name="genero" id="genero" class="rounded px-2" required>
+              <select name="genero" id="genero" class="rounded px-2" formControlName="gender" required>
                 <option selected disabled>Seleccione</option>
                 <option value="hombre">Hombre</option>
                 <option value="mujer">Mujer</option>
@@ -35,7 +35,7 @@
           <div class="mb-3">
             <label for="email" class="form-label">Correo Electrónico</label>
             <div class="input-contenedor">
-              <input type="email" class="" id="email_reg" placeholder="Ingrese su email" required />
+              <input formControlName="email" type="email" class="" id="email_reg" placeholder="Ingrese su email" required />
             </div>
           </div>
         </div>
@@ -43,25 +43,25 @@
           <div class="mb-3">
             <label for="curso" class="form-label">Curso</label>
             <div class="input-contenedor">
-              <input type="text" class="" id="curso" placeholder="Ingrese su curso" required />
+              <input formControlName="class" type="text" class="" id="curso" placeholder="Ingrese su curso" required />
             </div>
           </div>
           <div class="mb-3">
             <label for="fecha_nac" class="form-label">Fecha de nacimiento</label>
             <div class="input-contenedor">
-              <input type="date" class="px-2" id="fecha_nac" min="1970-01-01" max="2024-12-31" required />
+              <input formControlName="birthdate" type="date" class="px-2" id="fecha_nac" min="1970-01-01" max="2024-12-31" required />
             </div>
           </div>
           <div class="mb-3">
             <label for="password" class="form-label">Contraseña</label>
             <div class="input-contenedor">
-              <input type="password" class="" id="password" placeholder="Ingrese su contraseña" required />
+              <input formControlName="password" type="password" class="" id="password" placeholder="Ingrese su contraseña" required />
             </div>
           </div>
           <div class="mb-3">
             <label for="password-2" class="form-label">Repetir contraseña</label>
             <div class="input-contenedor">
-              <input type="password" class="" id="password-2" placeholder="Repita su contraseña" required />
+              <input formControlName="confirmPassword" type="password" class="" id="password-2" placeholder="Repita su contraseña" required />
             </div>
           </div>
         </div>
