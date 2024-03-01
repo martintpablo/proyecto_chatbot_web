@@ -1,7 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { environment } from 'src/app/environment/Global';
 import { Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-chat',
@@ -25,6 +25,8 @@ export class ChatComponent implements OnInit {
   repeat: string = "Por favor, responde con al menos 3 palabras para poder analizar correctamente como te sientes."
   finish: boolean = false;
   elementosHTML: String[] = [];
+  cleanResponses: any
+  settledResponses: any
   @ViewChild('chatScroll') chatScroll!: any;
 
   constructor(private router: Router, private http: HttpClient) {
@@ -32,7 +34,7 @@ export class ChatComponent implements OnInit {
   }
 
   bringQuestions() {
-    this.http.get("http://localhost:8000/api/chatbot/preguntas").subscribe({
+    this.http.get("http://localhost:8000/api/chatbot/").subscribe({
       next: (response: any) => {
         this.preguntas = response.preguntas;
       },
@@ -44,7 +46,9 @@ export class ChatComponent implements OnInit {
 
   
   sendResponses(responses: Object) {
-    this.http.post("http://localhost:8000/api/chatbot/preguntas", responses).subscribe({
+    let head = new HttpHeaders({'x-api-key':'OpmTjbbI0u4qvjDyCODAy17wghfC6jpbAVdHM570', 'Content-Type':'application/json'});
+
+    this.http.put('https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/?results="False"', responses, { headers: head }).subscribe({
       next: (response: any) => {
         
       },
@@ -53,6 +57,56 @@ export class ChatComponent implements OnInit {
       }
     });
   }
+
+  getCleanResponses() {
+    let head = new HttpHeaders({'x-api-key':'OpmTjbbI0u4qvjDyCODAy17wghfC6jpbAVdHM570', 'Content-Type':'application/json'});
+
+    this.http.get('https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/?results=False&date=29-2-2024&name=Usuario&justOne=True', { headers: head }).subscribe({
+      next: (response: any) => {
+        this.cleanResponses = response
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    });
+  }
+
+  analyzeResponses(responses: Object) {
+    this.http.post("http://localhost:8000/api/chatbot/preguntas", responses).subscribe({
+      next: (response: any) => {
+
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    });
+  }
+
+  getAnalyzedResponses() {
+    this.http.get("http://localhost:8000/api/chatbot/preguntas").subscribe({
+      next: (response: any) => {
+
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    });
+  }
+
+  uploadResponses(responses: Object) {
+    let head = new HttpHeaders({'x-api-key':'OpmTjbbI0u4qvjDyCODAy17wghfC6jpbAVdHM570', 'Content-Type':'application/json'});
+
+    this.http.put('https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/?results="True"', { headers: head }).subscribe({
+      next: (response: any) => {
+        this.settledResponses = response
+      },
+      error: (err: any) => {
+        console.log(err);
+      }
+    });
+  }
+
+
 
 
   toStats() {
@@ -89,9 +143,9 @@ export class ChatComponent implements OnInit {
     const respuesta = inputValue; 
 
     const datos = {
-      usuario: environment["nombre_usuario"],
+      usuario: "Usuario",
       preguntas: this.preguntasEnviar.concat(pregunta), 
-      respuestas: this.respuestas.concat(respuesta),
+      respuesta: this.respuestas.concat(respuesta),
       fecha: this.formatDate(this.fechaDeHoy)
     };
 
@@ -121,8 +175,14 @@ export class ChatComponent implements OnInit {
       } else {
         this.pregunta = this.bye
         datos.preguntas.shift()
-        datos.respuestas.shift()
+        datos.respuesta.shift()
         this.sendResponses(datos)
+        this.getCleanResponses()
+        console.log(this.cleanResponses)
+        this.analyzeResponses(this.cleanResponses)
+        this.getAnalyzedResponses()
+        console.log(this.settledResponses)
+        this.uploadResponses(this.settledResponses)
       }
     }
 

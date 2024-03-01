@@ -139,13 +139,15 @@ for categoria,variable in zipper:
     
     print(categoria,dict_resultados_analisis[categoria])
 '''
+objeto = {}
 puntuaciones=[]
 @csrf_exempt
 def chatbot_view(request):
+    global objeto
+
     if request.path == '/api/chatbot/preguntas':
         if request.method == 'GET':
-            response_data = {"preguntas": todas_las_preguntas }
-            return JsonResponse(response_data)
+            return JsonResponse({"datos":objeto})
         elif request.method == 'POST':
             try:
             # Obtener los datos del cuerpo de la solicitud POST
@@ -174,11 +176,9 @@ def chatbot_view(request):
                     puntuacion=modelo.predict([frase])[0]
                     puntuacion= round(puntuacion, 2)
                     puntuaciones.append(puntuacion)
-                data["puntuaciones"]=puntuaciones
-                print(data)
-
-
-
+                data["puntuaciones"] = puntuaciones
+                objeto=data
+                print(objeto)
 
 
                 # Puedes devolver una respuesta al cliente si es necesario
@@ -189,8 +189,9 @@ def chatbot_view(request):
         else:
             return HttpResponse(status=405) 
     else:
-        response_data = {"message": "Hola" + request.method }
-        return JsonResponse(response_data)
+        if request.method == 'GET':
+            response_data = {"preguntas": todas_las_preguntas }
+            return JsonResponse(response_data)
     
 
 # Instalar antes de ejecutar el servidor
@@ -201,3 +202,4 @@ def chatbot_view(request):
     
 # Arrancar el Servidor: python manage.py runserver
 # Este comando lo debes ejecutar en el terminal del directorio Django antes de arrancar la web en angular
+# Si no funciona lo que se acaba de instalar, en cualquier caso, reiniciar Visual Studio
