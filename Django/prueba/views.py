@@ -199,6 +199,7 @@ def chatbot_view(request):
 # pip install django
 # pip install djangorestframework
 # pip install django-cors-headers
+# pip install joblib  
     
 # Arrancar el Servidor: python manage.py runserver
 # Este comando lo debes ejecutar en el terminal del directorio Django antes de arrancar la web en angular

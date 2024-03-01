@@ -1,6 +1,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UserService } from 'src/services/user.service';
 
 @Component({
   selector: 'app-chat',
@@ -21,14 +22,17 @@ export class ChatComponent implements OnInit {
   responder: boolean = false;
   aparece: boolean = false;
   bye: string = "¡¡¡Gracias por participar!!! A continuación tendrás los resultados de las respuestas Mi trabajo aquí ha terminado, hasta la próxima...🖐️🖐️";
-  repeat: string = "Por favor, responde con al menos 3 palabras para poder analizar correctamente como te sientes."
+  repeat: string = "Por favor, responde con al menos 2 palabras para poder analizar correctamente como te sientes."
   finish: boolean = false;
   elementosHTML: String[] = [];
   cleanResponses: any
   settledResponses: any
   @ViewChild('chatScroll') chatScroll!: any;
 
-  constructor(private router: Router, private http: HttpClient) {
+  constructor(
+    private router: Router, 
+    private http: HttpClient, 
+    private userSvc: UserService) {
 
   }
 
@@ -142,25 +146,27 @@ export class ChatComponent implements OnInit {
     const respuesta = inputValue; 
 
     const datos = {
-      usuario: "Usuario",
+      usuario: this.userSvc.currentUser?.name,
       preguntas: this.preguntasEnviar.concat(pregunta), 
       respuesta: this.respuestas.concat(respuesta),
       fecha: this.formatDate(this.fechaDeHoy)
     };
 
-    this.preguntasEnviar.push(pregunta);
-    this.respuestas.push(inputValue);
+    if (lenghtChecker.length >= 2) {
+      this.preguntasEnviar.push(pregunta);
+      this.respuestas.push(inputValue);
+    }
+
     this.inputText.nativeElement.value = '';
 
     const mensaje = {
-      // usuario: environment["nombre_usuario"] != "" ? environment["nombre_usuario"] : "Alumno",
-      usuario: "Alumno",
+      usuario: this.userSvc.currentUser?.name,
       texto: inputValue,
       fecha: this.formatDate(this.fechaDeHoy),
       userMessage: true
     };
 
-    if (lenghtChecker.length < 3) {
+    if (lenghtChecker.length < 2) {
       this.pregunta = this.repeat
     } else {
       if (this.i < this.preguntas.length) {
@@ -176,6 +182,7 @@ export class ChatComponent implements OnInit {
         this.pregunta = this.bye
         datos.preguntas.shift()
         datos.respuesta.shift()
+        console.log(datos)
         this.sendResponses(datos)
         this.getCleanResponses()
         console.log(this.cleanResponses)
