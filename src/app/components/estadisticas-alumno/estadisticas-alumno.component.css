@@ -108,3 +108,7 @@
     font-family: 'Titan One';
     src: url("../../../assets/fonts/TitanOne-Regular.ttf");
 }
+
+#user-div {
+    cursor: pointer;
+}

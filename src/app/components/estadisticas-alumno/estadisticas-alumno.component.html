@@ -2,7 +2,7 @@
     <div class="w-100 h-100">
         <div id="barra-lateral" class="d-flex align-items-center">
             <div id="user-div" class="d-flex justify-content-center align-items-center">
-                <img (click)="profile()" id="userimg" src="../../../assets/img/UserImg.png" alt="UserImg">
+                <img (click)="profile()" id="userimg" src="../../../assets/img/UserImg.png" data-bs-toggle="modal" data-bs-target="#chooseDatosModal" alt="UserImg">
             </div>
             <div id="estadisticas-div" class="d-flex justify-content-center align-items-center">
                 <img (click)="toChat()" id="estadisticasimg" src="../../../assets/img/ChatImg.png" alt="UserImg">
@@ -18,10 +18,6 @@
                         <h2 class="col-4 me-auto" style="font-family: 'Titan One';">**Nombre del Alumno**</h2>
                         <div class="col-2 me-auto">
                             <h4 style="font-family: 'Titan One';">Clase: clase</h4>
-                        </div>
-                        <div class="col-3 ms-auto">
-                            <h5>Fecha:  {{ rangeValues.lower }} - {{ rangeValues.upper }}</h5>
-                            <ion-range aria-label="Dual Knobs Range" [dualKnobs]="true" [value]="rangeValues" pin="true" (ionChange)="onRangeChange($event)"></ion-range>
                         </div>
                     </div>
                     <hr style="width: 95%; margin: 2;">
@@ -41,5 +37,6 @@
                 </div>
             </div>
         </div>
+        <app-datos-perfil></app-datos-perfil>
     </div>    
 </div>

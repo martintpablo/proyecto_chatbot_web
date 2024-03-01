@@ -11,14 +11,13 @@ import { LoginComponentComponent } from './components/login-component/login-comp
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RoleRegisterComponent } from './components/role-register/role-register.component';
-import { MessageComponent } from './components/message/message.component';
 import { EstadisticasAlumnoComponent } from './components/estadisticas-alumno/estadisticas-alumno.component';
-import { PorffConfirmComponent } from './components/porff-confirm/porff-confirm.component';
 import { EstadisticasProfesorComponent } from './components/estadisticas-profesor/estadisticas-profesor.component';
 import { ListaAlumnosComponent } from './components/lista-alumnos/lista-alumnos.component';
 import { StudentOptionComponent } from './components/student-option/student-option.component';
 import { IonicModule } from '@ionic/angular';
 import { HttpClientModule } from '@angular/common/http';
+import { DatosPerfilComponent } from './components/datos-perfil/datos-perfil.component';
 
 @NgModule({
   declarations: [
@@ -30,12 +29,11 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponentComponent,
     RegisterComponent,
     RoleRegisterComponent,
-    MessageComponent,
     EstadisticasAlumnoComponent,
-    PorffConfirmComponent,
     EstadisticasProfesorComponent,
     ListaAlumnosComponent,
-    StudentOptionComponent
+    StudentOptionComponent,
+    DatosPerfilComponent
   ],
   imports: [
     BrowserModule,

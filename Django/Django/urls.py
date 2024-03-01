@@ -20,4 +20,5 @@ from prueba.views import chatbot_view
 urlpatterns = [
     path('', chatbot_view, name='chatbot_view'),  # Ruta para la página de inicio
     path('api/chatbot/', chatbot_view, name='chatbot'),  # Ruta para el chatbot
+    path('api/chatbot/preguntas', chatbot_view, name='preguntas'),  # Ruta para las preguntas
 ]

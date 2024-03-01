@@ -2,10 +2,10 @@
     <div class="w-100 h-100">
         <div id="barra-lateral" class="d-flex align-items-center">
             <div id="user-div" class="d-flex justify-content-center align-items-center">
-                <img id="userimg" src="../../../assets/img/UserImg.png" alt="UserImg">
+                <img id="userimg" src="../../../assets/img/UserImg.png" data-bs-toggle="modal" data-bs-target="#chooseDatosModal" alt="UserImg">
             </div>
             <div id="estadisticas-div" class="d-flex justify-content-center align-items-center">
-                <img (click)="toStats()" id="estadisticasimg" src="../../../assets/img/EstadisticasImg.png" alt="UserImg">
+                <img (click)="toStats()" id="estadisticasimg" src="../../../assets/img/EstadisticasImg.png" alt="Apartado de estadisticas">
             </div>
             <div id="logo-div" class="d-flex justify-content-center align-items-center">
                 <img id="logoimg" src="../../../assets/img/LogoBD.png" alt="LogImg">
@@ -17,21 +17,15 @@
                     <div id="mensajes">
                         <div class="fecha">
                             <hr class="barras">
-                            <p class="fecha-chat">{{ fechaDeAyer | date:'dd/MM/yyyy' }}</p>
+                            <p class="fecha-chat">{{ fechaDeHoy | date:'dd/MM/yyyy' }}</p>
                             <hr class="barras">
                         </div>
                         <div *ngFor="let mensaje of mensajes; let i = index" class="mensaje"
                             [ngClass]="i % 2 == 0 ? 'mensaje_bot' : 'mensaje_usuario'">
-                            <!-- <div class="info">
-                                <h5 class="usuario">{{ mensaje.usuario }}</h5>
-                                <div class="contenido">{{ mensaje.texto }}</div>
-                                <div class="hora">{{ mensaje.hora }}</div>
-                            </div> -->
                             <ng-container *ngIf="i % 2 != 0; else par">
                                 <div class="info">
                                     <h5 class="usuario">{{ mensaje.usuario }}</h5>
                                     <div class="contenido">{{ mensaje.texto }}</div>
-                                    <!-- <div class="hora">{{ mensaje.hora }}</div> -->
                                 </div>
                                 <div class="user_img">
                                     <img class="imagen" src="../../../assets/img/Account circle.png" alt="icono_STAC">
@@ -44,7 +38,6 @@
                                 <div class="info_bot">
                                     <h5 class="usuario">{{ mensaje.usuario }}</h5>
                                     <div class="contenido_bot">{{ mensaje.texto }}</div>
-                                    <!-- <div class="hora_bot">{{ mensaje.hora }}</div> -->
                                 </div>
                                 <div class="user_img">
                                     <img class="imagen" src="../../../assets/img/LogoCHAT.png" alt="icono_usuario">
@@ -55,8 +48,13 @@
                 </div>
                 <div id="entrada">
                     <input id="textinput" #inputText
+                        *ngIf="!finish"
                         (keyup.enter)="inputText.value !== '' && enviarDatos(inputText.value)"
                         placeholder="Escribe a STAC...">
+                    <input id="textinput" #inputText
+                        *ngIf="finish"
+                        (keyup.enter)="inputText.value !== '' && enviarDatos(inputText.value)"
+                        placeholder="Has respondido a todas las preguntas. ¡Comprueba tus resultados!" disabled>
                     <div id="marcoEnvio">
                         <hr class="vertical">
                         <button id="sendButton" (click)="inputText.value !== '' && enviarDatos(inputText.value)">
@@ -67,5 +65,6 @@
                 </div>
             </div>
         </div>
+        <app-datos-perfil></app-datos-perfil>
     </div>
 </div>
