@@ -134,7 +134,7 @@ tanto para web como para extracción de datos.
 
 Además, también usamos la API para la creación y gestión de usuarios.
 
-`<img src="image-20240302-160302.png" width="" align="" />`{=html}
+<img src="image-20240302-160302.png" width="" align=""/>
 
 Estructura de la API
 
