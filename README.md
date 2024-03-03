@@ -1290,4 +1290,4 @@ Además tenemos en la esquina superior derecha un desplegable para ver
 los datos por clase y un slider con todo el rango de fechas que existen
 en nuestros datos para poder ver datos en según qué épocas.
 
-Puedes interactuar con el informe [aquí ](https://github.com/martintpablo/proyecto_chatbot_web/blob/main/PowerBI/STAC.pbix)
+Puedes interactuar con el informe [aquí ](https://github.com/martintpablo/proyecto_chatbot_web/blob/main/PowerBI/STAC.pbix).
