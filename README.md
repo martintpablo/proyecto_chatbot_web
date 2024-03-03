@@ -134,7 +134,7 @@ tanto para web como para extracción de datos.
 
 Además, también usamos la API para la creación y gestión de usuarios.
 
-<img src="/IMG//IMG/image-20240302-160302.png"/>
+<img src="/IMG/image-20240302-160302.png"/>
 
 Estructura de la API
 
@@ -158,7 +158,7 @@ Metodos:
 
 Visualización de la estructura de carpetas en AWS
 
-<img src="/IMG//IMG/image-20240302-160107.png"/>
+<img src="/IMG//IMG/-20240302-160107.png"/>
 
 
 ### Lambda de extracción y carga
@@ -519,7 +519,7 @@ def lambda_handler(event, context):
 Utilizamos DynamoDB como base de datos para guardar la información
 referente a los usuarios.
 
-<img src="/IMG//IMG/image-20240302-163644.png"/>
+<img src="IMG/image-20240302-163644.png"/>
 
 Este lambda es el que se encarga de crear los usuarios y de gestionar
 los inicios de sesión.
@@ -1028,7 +1028,7 @@ para registrarse si el usuario no tiene una cuenta. Características:
 Aquí tenemos el componente \"home\" que a su vez llama al componente
 \"login-component\" y éste a \"role-register\"
 
-<img src="/IMG//IMG/image-20240301-230504.png"/>
+<img src="IMG/image-20240301-230504.png"/>
 
 ### Selección de roles
 
@@ -1063,7 +1063,7 @@ función \"register()\" que llamará al servicio User service para que
 haga una petición PUT con la funcion del servicio también llamada
 register().
 
-<img src="/IMG//IMG/image-20240301-230611.png"/>
+<img src="IMG/image-20240301-230611.png"/>
 
 ### ChatBot
 
