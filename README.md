@@ -134,7 +134,7 @@ tanto para web como para extracción de datos.
 
 Además, también usamos la API para la creación y gestión de usuarios.
 
-<img src="/IMG/image-20240302-160302.png"/>
+<img src="/IMG//IMG/image-20240302-160302.png"/>
 
 Estructura de la API
 
@@ -158,7 +158,7 @@ Metodos:
 
 Visualización de la estructura de carpetas en AWS
 
-`<img src="image-20240302-160107.png" width="" align="" />`{=html}
+<img src="/IMG//IMG/image-20240302-160107.png"/>
 
 
 ### Lambda de extracción y carga
@@ -519,7 +519,7 @@ def lambda_handler(event, context):
 Utilizamos DynamoDB como base de datos para guardar la información
 referente a los usuarios.
 
-`<img src="image-20240302-163644.png" width="" align="" />`{=html}
+<img src="/IMG//IMG/image-20240302-163644.png"/>
 
 Este lambda es el que se encarga de crear los usuarios y de gestionar
 los inicios de sesión.
@@ -1028,9 +1028,7 @@ para registrarse si el usuario no tiene una cuenta. Características:
 Aquí tenemos el componente \"home\" que a su vez llama al componente
 \"login-component\" y éste a \"role-register\"
 
-
-`<img src="image-20240301-230504.png" width="" align="" />`{=html}
-
+<img src="/IMG//IMG/image-20240301-230504.png"/>
 
 ### Selección de roles
 
@@ -1050,7 +1048,7 @@ poner en la barra de dirección una sección del otro rol, o de otro
 usuario, o incluso una dirección no válida, la página le redigirá al
 inicio
 
-`<img src="image-20240301-231045.png" width="" align="" />`{=html}
+<img src="/IMG/image-20240301-231045.png"/>
 
 ### Registro
 
@@ -1065,7 +1063,7 @@ función \"register()\" que llamará al servicio User service para que
 haga una petición PUT con la funcion del servicio también llamada
 register().
 
-`<img src="image-20240301-230611.png" width="" align="" />`{=html}
+<img src="/IMG//IMG/image-20240301-230611.png"/>
 
 ### ChatBot
 
@@ -1094,30 +1092,30 @@ pasa por diferentes funciones en chat.component.ts en las que
 transforman el texto para enviarlo al S3(mediante otro servicio) y al
 bot, donde este le devuelve una respuesta.
 
-`<img src="image-20240301-230357.png" width="" align="" />`{=html}
+<img src="/IMG/image-20240301-230357.png"/>
 
 Al pinchar en el icono del usuario, se muestra una card de Boostrap con
 la información del usuario.
 
-`<img src="image-20240301-231658.png" width="" align="" />`{=html}
+<img src="/IMG/image-20240301-231658.png"/>
 
 En el apartado de estadísticas alumno, se mostrarán graficas con la
 información recaudada y extraida de AWS, y un pequeño mensaje de
 motivación en base a la puntuación que ha sacado el análisis.
 
-`<img src="image-20240302-205107.png" width="" align="" />`{=html}
+<img src="/IMG/image-20240302-205107.png"/>
 
 El profesor podrá gestionar los alumnos de su clase, y acceder a sus
 estadísticas individuales.
 
-`<img src="image-20240302-204942.png" width="" align="" />`{=html}
+<img src="/IMG/image-20240302-204942.png"/>
 
 El profesor también cuenta con una pestaña de estadísticas de la clase,
 aquí puede ver información como el número de alumno, profesores, clase y
 las gráficas correspondientes. Toda esta información se extrae
 directamente de AWS.
 
-`<img src="image-20240302-205158.png" width="" align="" />`{=html}
+<img src="/IMG/image-20240302-205158.png"/>
 
 ### 6.1 Power BI {#61-power-bi}
 
