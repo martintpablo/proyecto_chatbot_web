@@ -8,6 +8,8 @@ educativo, exámenes, trabajos, etc.). Dicha información se almacena y se
 le realiza analítica de sentimientos. De este modo, se visualiza un
 panel con los sentimientos del alumno/a en base a diferentes parámetros.
 
+Vídeo del chat funcionando: [Vídeo chat](https://drive.google.com/file/d/1FTmqUv7R_6M4AhY6v683M3p7PoPy-jlM/view?usp=sharing)
+
 ## Paso 1: Creación de un Chat
 
 Este código Python se centra en analizar las respuestas emocionales de
