@@ -307,7 +307,7 @@ Para la carga hemos utilizado el mismo cuaderno Glue (fragmento de
 código mostrado en el siguiente bloque) y el Lambda mostrado en el paso
 de tratado.
 
-### Glue {#glue}
+### Glue
 
 ``` python
 datos = {"usuario": "", "preguntas": [], "respuesta": [], "fecha": ""}
@@ -703,7 +703,7 @@ El modelo de sentimientos, ha sido necesario crear un dataset hecho a
 mano analizando las frases con la libreria nltk y despues se entrena el
 modelo a traves del dataset previamente creado.
 
-## 5.1 Crear un buscador de sinonimos. {#51-crear-un-buscador-de-sinonimos}
+## 5.1 Crear un buscador de sinonimos.
 
 Aquí se esta buscando sinonimos de palabras para despues penalizarlas o
 puntuarlas mejor.
@@ -750,7 +750,7 @@ for palabra in palabras_a_buscar:
 print("Conjuntas: " + str(sinonimos_conjunto))
 ```
 
-## 5.2 Función que para puntualizar las frases. {#52-función-que-para-puntualizar-las-frases}
+## 5.2 Función que para puntualizar las frases. 
 
 En este codigo se esta haciendo una puntuacion a una frase comprobando
 si tiene palabras negativas para puntualizarla peor o si tiene palabras
@@ -791,7 +791,7 @@ def get_sentiment_score(text):
     return text_en, sentiment_score
 ```
 
-## 5.3 Comprobacion individual {#53-comprobacion-individual}
+## 5.3 Comprobacion individual
 
 ``` python
 texto = "esto harto de proyectos quiero acabar con mi vida "
@@ -825,7 +825,7 @@ print(f"El sentimiento de es: ",score)
 
 Como podemos ver esta dandole una puntuación adecuada a la frase.
 
-## 5.4 Funcion para pasarle un array de frases y que las puntualice. {#54-funcion-para-pasarle-un-array-de-frases-y-que-las-puntualice}
+## 5.4 Funcion para pasarle un array de frases y que las puntualice.
 
 ``` python
 def funcion(texto):
@@ -857,7 +857,7 @@ def funcion(texto):
   return score
 ```
 
-## 5.5 Arreglando las frases antes de puntualizarlas. {#55-arreglando-las-frases-antes-de-puntualizarlas}
+## 5.5 Arreglando las frases antes de puntualizarlas.
 
 Aqui estamos eliminadon valores y caracteres que no son necesarios, como
 los iconos, eliminar los @ y el texto asociado, eliminar \# y su texto,
@@ -923,7 +923,7 @@ for texto in textos:
 print("textos =", textos_procesados)
 ```
 
-## 5.6 Puntualizando frases para añadirlo al dataset. {#56-puntualizando-frases-para-añadirlo-al-dataset}
+## 5.6 Puntualizando frases para añadirlo al dataset.
 
 ``` python
 textos = ['esta soy yo al ver que las directioners piden ayuda a otros fandoms y la pagina no cuenta todo lo que ya llevamos que creo que arrevazamos a 1d pero la pagina ni verga  ', 'púdrete maldita sensación de angustia y desespero por no tener nada estable, déjame descansar de tu compañía pinche perra.']
@@ -934,7 +934,7 @@ for resultado in textos:
   print(resultado," ,puntuacion: ", formatted_score)
 ```
 
-## 5.7 Preparacion de los modelos y entrenamiento. {#57-preparacion-de-los-modelos-y-entrenamiento}
+## 5.7 Preparacion de los modelos y entrenamiento.
 
 Una vez creado el dataset probamos como funcionan mejor los modelos si
 dejando las stopword o quitandolas.
@@ -950,14 +950,14 @@ stop_words = set(stopwords.words('spanish'))
 df['texto'] = df['texto'].apply(lambda x: ' '.join([word.lower() for word in x.split() if word.isalpha() and word.lower() not in stop_words]))
 ```
 
-## 5.8 Separamos los valores para el entrenamiento. {#58-separamos-los-valores-para-el-entrenamiento}
+## 5.8 Separamos los valores para el entrenamiento.
 
 ``` python
 # División de datos en conjuntos de entrenamiento y prueba
 X_train, X_test, y_train, y_test = train_test_split(df['texto'], df['puntuacion'], test_size=0.2, random_state=42)
 ```
 
-## 5.9 Modelo de regresión lineal. {#59-modelo-de-regresión-lineal}
+## 5.9 Modelo de regresión lineal.
 
 ``` python
 # Crear un modelo de regresión lineal con un pipeline que incluye un vectorizador de texto
@@ -991,7 +991,7 @@ Con este modelo hemos tenido un 92.34% de acierto.
 
 ## Paso 6: Visualización
 
-### 6.1 Web {#61-web}
+### 6.1 Web
 
 Para la creación web hemos utilizado el Framework de Javascript llamado
 Angular, el cual nos ha permitido no sólo crear la estructura más
@@ -1117,7 +1117,7 @@ directamente de AWS.
 
 <img src="/IMG/image-20240302-205158.png"/>
 
-### 6.1 Power BI {#61-power-bi}
+### 6.1 Power BI
 
 Para visualizar los datos generales de la aplicación y detectar patrones
 interesantes para tomar decisiones acertadas en base a datos usaremos
