@@ -158,7 +158,7 @@ Metodos:
 
 Visualización de la estructura de carpetas en AWS
 
-<img src="/IMG//IMG/-20240302-160107.png"/>
+<img src="IMG/-20240302-160107.png"/>
 
 
 ### Lambda de extracción y carga
