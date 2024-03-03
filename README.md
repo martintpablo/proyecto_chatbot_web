@@ -16,7 +16,7 @@ relacionadas con temas académicos, relaciones interpersonales y
 crecimiento personal para evaluar las respuestas de los usuarios.
 Principales componentes:
 
-1.  Preguntas clave y adicionales
+**1.  Preguntas clave y adicionales**
 
 El código define una serie de preguntas clave en diferentes áreas, como
 materias, compañeros, profesores, centro educativo, estudios generales,
@@ -25,13 +25,13 @@ evaluar las respuestas emocionales de los usuarios. Además, se incluye
 un archivo de preguntas adicionales para cada tema, de las cuales se
 seleccionan aleatoriamente dos junto con la pregunta clave.
 
-1.  Entrada de Respuestas
+**2.  Entrada de Respuestas**
 
 El usuario proporciona respuestas a las preguntas clave y adicionales.
 El código valida que cada respuesta tenga al menos tres palabras para
 garantizar un análisis preciso.
 
-1.  Almacenamiento de Respuestas
+**3.  Almacenamiento de Respuestas**
 
 Las respuestas del usuario se almacenan en variables para su posterior
 procesamiento. Esto permite enviarlas al análisis de sentimiento y
