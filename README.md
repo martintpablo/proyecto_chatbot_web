@@ -1004,7 +1004,7 @@ A la hora de la visualización cada componente mostrará la parte HTML,
 estos siendo llamados, o más bien cargados gracias al fichero de
 app-routing donde cada componente es inicializado y se le asigna una
 variable. También se puede llamar al componente mediante la etiqueta
-`<app-nombre_del_componente>`{=html}.
+`<app-nombre_del_componente>`
 
 Bootstrap ha sido sin duda un elemento a tener en cuenta a la hora del
 diseño de la aplicación, ya que ha permitido añadir clases y organizar
