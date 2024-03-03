@@ -138,7 +138,7 @@ Además, también usamos la API para la creación y gestión de usuarios.
 
 Estructura de la API
 
-Enlace: <https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/>
+Enlace: https://4apyvj5zx4.execute-api.us-east-1.amazonaws.com/prod/
 
 Metodos:
 
@@ -299,7 +299,7 @@ def lambda_handler(event, context):
 
 Enlace a un cuaderno de Google Colab con el código utilizado:
 
-<https://colab.research.google.com/drive/1gYGex2oaTVQQgB6NJITwSPxrLZ5nIJv4?usp=sharing>
+https://colab.research.google.com/drive/1gYGex2oaTVQQgB6NJITwSPxrLZ5nIJv4?usp=sharing
 
 ## Paso 4: Carga
 
