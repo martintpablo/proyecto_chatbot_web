@@ -1,18 +1,5 @@
----
-jupyter:
-  deepnote_full_width: false
-  deepnote_notebook_id: dfa05eeabf5042b4acd51e883c45df39
-  deepnote_persisted_session:
-    createdAt: "2024-03-02T00:02:37.409Z"
-  nbformat: 4
-  nbformat_minor: 0
----
-
-::: {.cell .markdown cell_id="2ca1c8aef4604eabbd2157edd457bb70" deepnote_cell_type="text-cell-h1" formattedRanges="[]"}
 # PROYECTO 1: Estado anímico
-:::
 
-::: {.cell .markdown cell_id="94ed6b2ea2e246128deb9f4bac8a4d0a" deepnote_cell_type="text-cell-p" formattedRanges="[{\"fromCodePoint\":0,\"marks\":{\"bold\":true},\"toCodePoint\":496,\"type\":\"marks\"}]"}
 El proyecto consiste en el desarrollo de un chatbot que interacciona con
 el alumnado de un centro educativo, para que le haga diversas preguntas
 sobre su situación académica y su satisfacción con los diferentes
@@ -20,7 +7,6 @@ elementos que intervienen (materias, compañeros, profesores, centro
 educativo, exámenes, trabajos, etc.). Dicha información se almacena y se
 le realiza analítica de sentimientos. De este modo, se visualiza un
 panel con los sentimientos del alumno/a en base a diferentes parámetros.
-:::
 
 ::: {.cell .markdown cell_id="3547909af76c43d88d55b954a1b59cbe" deepnote_cell_type="text-cell-h2" formattedRanges="[]"}
 ## Paso 1: Creación de un Chat
