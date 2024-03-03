@@ -1209,11 +1209,11 @@ Sustituiremos cada número por una pregunta de las que tenemos. Borramos
 la columna con las preguntas mal generadas y le ponemos el nombre de
 esta a la columna nueva.
 
-`<img src="Captura de pantalla 2024-03-02 014904.jpg" width="" align="" />`{=html}
+<img src="/IMG/Captura de pantalla 2024-03-02 014904.jpg"/>
 
 Aquí podemos ver los datos ya transformados.
 
-`<img src="STAC_PowerBI_Captura-20240301-232323.jpg" width="" align="" />`{=html}
+<img src="/IMG/STAC_PowerBI_Captura-20240301-232323.jpg"/>
 
 Aquí podemos observar el informe de PowerBI que sirve para ver datos de
 los mensajes y usuarios de nuestra aplicación. Explicaremos cada panel
