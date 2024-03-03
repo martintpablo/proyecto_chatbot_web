@@ -1136,19 +1136,6 @@ data = pd.read_csv("STAC_Data.csv")
 
 data.head(10)
 ```
-3]
-0 s
-import pandas as pd
-
-# Lee los datos desde el archivo CSV
-data = pd.read_csv("/content/STAC_Data.csv")
-
-# Obtén los nombres de las columnas
-column_names = list(data.columns)
-
-# Construye la tabla Markdown
-markdown_table = "| " + " | ".join(column_names) + " |\n"
-
 | Nombre | Apellidos | Email | Rol | Clase | Género | Pregunta | Respuesta | Puntuación | Fecha |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Mandie | Kaming | mkaming0@edublogs.org | student | 1º DAM | Masculino | Managed 24/7 toolset | Muy Bien | 0.05 | 9/15/2023 |
@@ -1260,7 +1247,7 @@ Clases = DISTINCTCOUNT(STAC_Data[Clase])
 
 Estas medidas las introduciremos en una tarjeta de varias filas.
 
-1.  Recuento de Rangos de Puntuaciones de las Respuestas Ofrecidas por
+2.  Recuento de Rangos de Puntuaciones de las Respuestas Ofrecidas por
     los Usuarios. Gráfico de Barras. Mientras más bajo, más negativas
     serán las respuestas, mientras más alto, más positivo.
 
@@ -1280,19 +1267,19 @@ Sentimientos = SWITCH (
 
 Pondremos esta columna en el eje X y la fecha del mensaje en el eje Y
 
-1.  Respuestas por Clase: Gráfico Circular.Podemos ver el número de
+3.  Respuestas por Clase: Gráfico Circular.Podemos ver el número de
     respuestas que se ha realizado por cada clase. Esta gráfica nos será
     muy útil ya que gracias a la interactividad de PowerBI podremos ver
     fácilmente los datos por cada clase. Para la \'Leyenda\'
     introduciremos la columna \'Clase\' y para los valores la columna
     \'Respuestas\'.
 
-1.  Recuento de Mensajes por Fecha. Gráfico de Líneas
+4.  Recuento de Mensajes por Fecha. Gráfico de Líneas
 
 La columna \'Fecha\' en el eje X y las columna \'Respuesta\' en el eje
 Y.
 
-1.  Sentimientos por Género. Gráfico de Columnas Agrupadas. Aquí podemos
+5.  Sentimientos por Género. Gráfico de Columnas Agrupadas. Aquí podemos
     ver una forma mejorada del gráfico que está justo arriba teniendo en
     cuenta las puntuaciones de las respuestas por cada género.
 
@@ -1300,7 +1287,7 @@ Para poder construir este objeto visual introduciremos en el eje X la
 columna \'Género\', la columna \'Puntuación\' en el eje Y y la columna
 \'Sentimientos\' en la Leyenda.
 
-1.  Pregúntale a PowerBI. En este objeto visual de preguntas y
+6.  Pregúntale a PowerBI. En este objeto visual de preguntas y
     respuestas podremos realizar preguntas y consultas para ver en
     detalle aspectos de nuestros datos. Como ejemplo tenemos un top 10
     de clases con más alumnos.
