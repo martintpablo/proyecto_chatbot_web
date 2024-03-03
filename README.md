@@ -1136,6 +1136,43 @@ data = pd.read_csv("STAC_Data.csv")
 
 data.head(10)
 ```
+3]
+0 s
+import pandas as pd
+
+# Lee los datos desde el archivo CSV
+data = pd.read_csv("/content/STAC_Data.csv")
+
+# Obtén los nombres de las columnas
+column_names = list(data.columns)
+
+# Construye la tabla Markdown
+markdown_table = "| " + " | ".join(column_names) + " |\n"
+
+| Nombre | Apellidos | Email | Rol | Clase | Género | Pregunta | Respuesta | Puntuación | Fecha |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Mandie | Kaming | mkaming0@edublogs.org | student | 1º DAM | Masculino | Managed 24/7 toolset | Muy Bien | 0.05 | 9/15/2023 |
+| Shaylynn | Corcut | scorcut1@merriam-webster.com | teacher | 1º DAM | Masculino | Seamless next generation open architecture | Podría Ser Mejor | 2.4 | 4/10/2023 |
+| Jermaine | Rowen | jrowen2@privacy.gov.au | student | Videojuegos | Masculino | Enterprise-wide reciprocal productivity | Bastante Mal | 4.97 | 4/9/2023 |
+| Glennie | Scrane | gscrane3@parallels.com | teacher | Ciberseguridad | NS/NC | Sharable regional utilisation | Bastante Bien | 0.91 | 10/13/2023 |
+| Stanislaw | Edmunds | sedmunds4@i2i.jp | student | 1º DAW | Femenino | Enhanced multimedia framework | Bastante Bien | 3.93 | 10/21/2022 |
+| Lyman | Rosenblatt | lrosenblatt5@mapquest.com | student | Videojuegos | Femenino | Optimized well-modulated firmware | Muy Bien | 0.34 | 3/3/2023 |
+| Kori | Fury | kfury6@goo.gl | student | Videojuegos | Femenino | Managed incremental architecture | Bastante Bien | 1.69 | 11/29/2023 |
+| Crin | Farrears | cfarrears7@telegraph.co.uk | student | 2º ASIR | Femenino | Sharable discrete archive | Podría Ser Mejor | 4.18 | 2/5/2023 |
+| Nelia | Gillon | ngillon8@cpanel.net | student | 2º ASIR | NS/NC | Phased discrete extranet | Bastante Mal | 2.52 | 1/3/2022 |
+| Abbot | Snaden | asnaden9@adobe.com | student | 2º ASIR | Masculino | Organized responsive neural-net | Podría Ser Mejor | 1.82 | 9/21/2022 |
+
+Nombre	Apellidos	Email	Rol	Clase	Género	Pregunta	Respuesta	Puntuación	Fecha
+Mandie	Kaming	mkaming0@edublogs.org	student	1º DAM	Masculino	Managed 24/7 toolset	Muy Bien	0.05	9/15/2023
+Shaylynn	Corcut	scorcut1@merriam-webster.com	teacher	1º DAM	Masculino	Seamless next generation open architecture	Podría Ser Mejor	2.4	4/10/2023
+Jermaine	Rowen	jrowen2@privacy.gov.au	student	Videojuegos	Masculino	Enterprise-wide reciprocal productivity	Bastante Mal	4.97	4/9/2023
+Glennie	Scrane	gscrane3@parallels.com	teacher	Ciberseguridad	NS/NC	Sharable regional utilisation	Bastante Bien	0.91	10/13/2023
+Stanislaw	Edmunds	sedmunds4@i2i.jp	student	1º DAW	Femenino	Enhanced multimedia framework	Bastante Bien	3.93	10/21/2022
+Lyman	Rosenblatt	lrosenblatt5@mapquest.com	student	Videojuegos	Femenino	Optimized well-modulated firmware	Muy Bien	0.34	3/3/2023
+Kori	Fury	kfury6@goo.gl	student	Videojuegos	Femenino	Managed incremental architecture	Bastante Bien	1.69	11/29/2023
+Crin	Farrears	cfarrears7@telegraph.co.uk	student	2º ASIR	Femenino	Sharable discrete archive	Podría Ser Mejor	4.18	2/5/2023
+Nelia	Gillon	ngillon8@cpanel.net	student	2º ASIR	NS/NC	Phased discrete extranet	Bastante Mal	2.52	1/3/2022
+Abbot	Snaden	asnaden9@adobe.com	student	2º ASIR	Masculino	Organized responsive neural-net	Podría Ser Mejor	1.82	9/21/2022
 
 La forma en la que obtendríamos estos datos de nuestra base datos sería
 obteniendo cada pregunta, junto con la respuesta, la puntuación, el
